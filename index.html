@@ -741,7 +741,7 @@
       </svg>
     </a>
 
-    <a href="#contato" aria-label="Entrar em contato" title="Entrar em contato"
+    <a href="https://wa.me/5511976702520?text=Ol%C3%A1%2C%20Dra.%20Beatriz!%20Gostaria%20de%20agendar%20uma%20consulta%20ou%20obter%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Entrar em contato via WhatsApp" title="Entrar em contato via WhatsApp"
       class="focus-ring group relative grid h-16 w-16 place-items-center overflow-hidden rounded-full border border-ink/10 bg-cream text-ink shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-card sm:h-[72px] sm:w-[72px]">
       <dotlottie-wc src="https://lottie.host/8af09a08-4b4e-4139-823e-a386188a49a8/PmppkaNsbI.lottie" autoplay loop
         speed="0.5"
@@ -1499,7 +1499,29 @@
 
     document.getElementById('contact-form').addEventListener('submit', (event) => {
       event.preventDefault();
-      document.getElementById('form-status').classList.remove('hidden');
+      const form = event.target;
+      const nome = form.elements['nome'] ? form.elements['nome'].value.trim() : '';
+      const email = form.elements['email'] ? form.elements['email'].value.trim() : '';
+      const motivo = form.elements['motivo'] ? form.elements['motivo'].value.trim() : '';
+      const mensagem = form.elements['mensagem'] ? form.elements['mensagem'].value.trim() : '';
+
+      const phone = '5511976702520';
+      const formattedText = `👩‍⚕️ *SOLICITAÇÃO DE ATENDIMENTO — DRA. BEATRIZ CULLY*\n\n` +
+                            `👤 *Nome:* ${nome}\n` +
+                            `📧 *E-mail:* ${email}\n` +
+                            `📋 *Motivo da Consulta:* ${motivo}\n\n` +
+                            `💬 *Mensagem:*\n"${mensagem}"\n\n` +
+                            `---\n_Enviado através do site oficial_`;
+
+      const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(formattedText)}`;
+
+      const statusEl = document.getElementById('form-status');
+      if (statusEl) {
+        statusEl.textContent = '✅ Formulário formatado! Redirecionando para o WhatsApp...';
+        statusEl.className = 'mt-5 block rounded-xl bg-[#9BCEC1]/40 p-4 text-sm text-[#1E2B37] font-medium';
+      }
+
+      window.open(whatsappUrl, '_blank');
     });
     document.getElementById('year').textContent = new Date().getFullYear();
 
