@@ -1,0 +1,19 @@
+{
+  "name": "beatriz-cully-psiquiatria",
+  "version": "1.0.0",
+  "description": "Website institucional Dra. Beatriz Cully - Psiquiatria",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "build": "echo 'Static site ready for deployment'"
+  },
+  "keywords": [
+    "psiquiatria",
+    "beatriz-cully",
+    "vercel",
+    "landing-page"
+  ],
+  "author": "Dra. Beatriz Cully",
+  "license": "ISC"
+}

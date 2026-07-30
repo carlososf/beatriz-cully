@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Atendimento online em psiquiatria clínica com a Dra. Beatriz Cully para pacientes a partir de 18 anos.">
+  <meta name="theme-color" content="#FDF1E4">
+  <!-- SEO & Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <meta property="og:title" content="Dra. Beatriz Cully | Psiquiatria">
+  <meta property="og:description" content="Atendimento online em psiquiatria clínica com a Dra. Beatriz Cully para pacientes a partir de 18 anos.">
+  <meta property="og:image" content="hero.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dra. Beatriz Cully | Psiquiatria">
+  <meta name="twitter:description" content="Atendimento online em psiquiatria clínica com a Dra. Beatriz Cully para pacientes a partir de 18 anos.">
+  <meta name="twitter:image" content="hero.png">
+  <title>Dra. Beatriz Cully | Psiquiatria</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FDF1E4',
+            coral: '#FFB6A6',
+            sage: '#9BCEC1',
+            blue: '#67A2C5',
+            ink: '#1E2B37'
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(30, 43, 55, 0.08)',
+            card: '0 12px 35px rgba(30, 43, 55, 0.06)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --green-base: #A3D1C6;
+      --green-dark: #2B574C;
+      --green-light: #E0F0EC;
+
+      --blue-base: #7FAFD0;
+      --blue-dark: #1F425B;
+      --blue-light: #E8F2F8;
+
+      --peach-base: #F8BCAE;
+      --peach-dark: #6E3B32;
+      --peach-light: #FDF1EE;
+
+      --bg-page: #FDF1E4;
+      --text-dark: #1A1A1A;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .art-card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      min-height: 480px;
+    }
+
+    .art-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .gif-illustration {
+      height: 220px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: height 0.5s ease;
+    }
+
+    .art-card:hover .gif-illustration {
+      height: 240px;
+    }
+
+    .gif-illustration dotlottie-wc {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-origin: center;
+      opacity: 0.95;
+      transform: scale(1.22);
+    }
+
+    .art-card:hover .gif-illustration dotlottie-wc {
+      transform: scale(1.32);
+      opacity: 1;
+    }
+
+    .card-content {
+      padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .art-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      transition: color 0.3s ease;
+    }
+
+    .art-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555;
+      font-weight: 300;
+    }
+
+    .card-footer-line {
+      height: 3px;
+      width: 0;
+      background: currentColor;
+      margin-top: auto;
+      transition: width 0.5s ease;
+      border-radius: 3px;
+    }
+
+    .art-card:hover .card-footer-line {
+      width: 50px;
+    }
+
+    .card-green .gif-illustration {
+      background-color: var(--green-light);
+    }
+
+    .card-green .card-tag {
+      color: var(--green-dark);
+    }
+
+    .card-green .card-footer-line {
+      background-color: var(--green-base);
+    }
+
+    .card-green:hover h2 {
+      color: var(--green-dark);
+    }
+
+    .card-blue .gif-illustration {
+      background-color: var(--blue-light);
+    }
+
+    .card-blue .card-tag {
+      color: var(--blue-dark);
+    }
+
+    .card-blue .card-footer-line {
+      background-color: var(--blue-base);
+    }
+
+    .card-blue:hover h2 {
+      color: var(--blue-dark);
+    }
+
+    .card-peach .gif-illustration {
+      background-color: var(--peach-light);
+    }
+
+    .card-peach .card-tag {
+      color: var(--peach-dark);
+    }
+
+    .card-peach .card-footer-line {
+      background-color: var(--peach-base);
+    }
+
+    .card-peach:hover h2 {
+      color: var(--peach-dark);
+    }
+
+    @media (max-width: 768px) {
+
+      /* Base & Navigation Mobile */
+      header#header {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.35s ease;
+      }
+
+      header#header.header-hidden {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateY(-100%) !important;
+      }
+
+      header#header.header-visible {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+      }
+
+      header#header>div {
+        height: 4.25rem;
+      }
+
+      .mobile-brand {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #1E2B37;
+        letter-spacing: -0.01em;
+      }
+
+      #mobile-menu {
+        margin-top: 0.5rem;
+        border-radius: 1.25rem;
+        box-shadow: 0 16px 40px rgba(30, 43, 55, 0.12);
+        padding: 0.75rem;
+      }
+
+      /* Hero Section Mobile (Estilo App Médico) */
+      #inicio {
+        background: #FDF1E4 !important;
+        min-height: auto !important;
+      }
+
+      /* Cards Artísticos Lottie Mobile */
+      section[aria-label="Diferenciais do atendimento"] {
+        margin-top: 1.5rem !important;
+      }
+
+      .gallery-container {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        gap: 1.75rem;
+      }
+
+      .art-card {
+        min-height: auto;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .gif-illustration {
+        height: 190px;
+      }
+
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .art-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .art-card p {
+        font-size: 0.9rem;
+      }
+
+      /* Seção Interativa "O que tratamos" (Cérebro Anatômico) no Celular */
+      .interactive-wrapper {
+        overflow-x: visible;
+        padding: 0;
+      }
+
+      .interactive-container {
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        align-items: center !important;
+      }
+
+      #svg-layer {
+        display: none !important;
+      }
+
+      .brain-area {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 280px !important;
+        height: 240px !important;
+        margin: 0 auto !important;
+        animation: floatMobile 5s ease-in-out infinite !important;
+        order: 1 !important;
+      }
+
+      @keyframes floatMobile {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-8px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .interactive-column {
+        width: 100% !important;
+        gap: 0.85rem !important;
+        order: 2 !important;
+      }
+
+      .interactive-column.left,
+      .interactive-column.right {
+        width: 100% !important;
+      }
+
+      .interactive-card {
+        width: 100% !important;
+        padding: 1.25rem !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 18px rgba(30, 43, 55, 0.05) !important;
+        border: 1.5px solid rgba(30, 43, 55, 0.08) !important;
+        background: #ffffff !important;
+        transition: all 0.3s cubic-bezier(0.22, 1, .36, 1) !important;
+      }
+
+      .interactive-card:active,
+      .interactive-card.active {
+        transform: scale(0.99) !important;
+        border-color: #67A2C5 !important;
+        background: #F4F8FA !important;
+        box-shadow: 0 8px 25px rgba(103, 162, 197, 0.15) !important;
+      }
+
+      .interactive-card h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.25rem !important;
+      }
+
+      .interactive-card p {
+        font-size: 0.88rem !important;
+      }
+
+      /* Sobre & Abordagem Mobile */
+      #sobre {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+
+      #sobre h2 {
+        font-size: 2.25rem !important;
+      }
+
+      .portrait-wrapper-mobile {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .portrait-wrapper-mobile::before {
+        content: '';
+        position: absolute;
+        inset: 5%;
+        background: radial-gradient(circle, rgba(155, 206, 193, 0.4) 0%, rgba(255, 182, 166, 0.25) 60%, transparent 80%);
+        border-radius: 50%;
+        filter: blur(25px);
+        z-index: 0;
+      }
+
+      .portrait-wrapper-mobile img {
+        position: relative;
+        z-index: 1;
+      }
+
+      #video {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+
+      #video h2 {
+        font-size: 2.25rem !important;
+      }
+
+      section.px-5.py-28 {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+
+      article.min-h-\[330px\] {
+        min-height: auto !important;
+        padding: 1.75rem !important;
+        border-radius: 1.5rem !important;
+      }
+
+      article.min-h-\[330px\] h3 {
+        font-size: 1.65rem !important;
+      }
+
+      /* Contato & Form Mobile */
+      #contato {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+
+      #contato h2 {
+        font-size: 2.25rem !important;
+      }
+
+      #contact-form {
+        padding: 1.5rem !important;
+        border-radius: 1.5rem !important;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12) !important;
+      }
+
+      #contact-form input,
+      #contact-form select,
+      #contact-form textarea {
+        background-color: #F8FAF9 !important;
+        border: 1px solid rgba(30, 43, 55, 0.12) !important;
+        border-radius: 0.75rem !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.95rem !important;
+        margin-top: 0.5rem !important;
+      }
+
+      #contact-form input:focus,
+      #contact-form select:focus,
+      #contact-form textarea:focus {
+        border-color: #67A2C5 !important;
+        box-shadow: 0 0 0 3px rgba(103, 162, 197, 0.2) !important;
+      }
+
+      /* Floating Action Button Mobile */
+      #floating-contact {
+        bottom: 1.25rem !important;
+        right: 1.25rem !important;
+      }
+
+      a[aria-label="Entrar em contato"] {
+        width: 56px !important;
+        height: 56px !important;
+        box-shadow: 0 10px 25px rgba(30, 43, 55, 0.15) !important;
+      }
+
+      a[aria-label="Entrar em contato"] dotlottie-wc {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+
+    ::selection {
+      background: #FFB6A6;
+      color: #1E2B37;
+    }
+
+    body {
+      text-rendering: optimizeLegibility;
+    }
+
+    .focus-ring:focus-visible {
+      outline: 2px solid #67A2C5;
+      outline-offset: 4px;
+    }
+
+    .hero-logo {
+      filter: grayscale(1) brightness(0);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translate3d(0, 14px, 0);
+      transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+      will-change: auto;
+    }
+
+    .interactive-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      padding: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .interactive-container {
+      position: relative;
+      width: 1000px;
+      height: 500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    .interactive-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 260px;
+      z-index: 10;
+    }
+
+    .interactive-card {
+      background: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 260px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      appearance: none;
+      font: inherit;
+      text-align: left;
+    }
+
+    .interactive-card:hover,
+    .interactive-card.active {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border-color: #d0d0d0;
+    }
+
+    .interactive-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .interactive-card p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .brain-area {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 350px;
+      animation: float 6s ease-in-out infinite;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(-50%, -50%);
+      }
+
+      50% {
+        transform: translate(-50%, calc(-50% - 10px));
+      }
+
+      100% {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    #svg-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .brain-region {
+      transition: all 0.5s ease;
+      stroke: #ffffff;
+      stroke-width: 3;
+      stroke-linejoin: round;
+    }
+
+    .brain-sulci {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.4);
+      stroke-width: 1.5;
+      transition: all 0.5s ease;
+    }
+
+    .brain-region.dimmed,
+    .brain-sulci.dimmed {
+      opacity: 0.25;
+      filter: grayscale(80%);
+    }
+
+    .brain-region.highlighted {
+      opacity: 1;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+      transform: scale(1.015);
+      transform-origin: center;
+    }
+
+    .arrow-path {
+      fill: none;
+      stroke: #888;
+      stroke-width: 2;
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+      transition: stroke-dashoffset 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+    }
+
+    .arrow-path.active {
+      stroke-dashoffset: 0;
+      opacity: 1;
+      stroke: #444;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .brain-region,
+      .brain-sulci,
+      .arrow-path,
+      .interactive-card {
+        transition: none;
+      }
+
+      .brain-area {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden bg-cream font-sans text-ink antialiased">
+  <a href="#conteudo"
+    class="focus-ring fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-ink px-5 py-3 text-sm text-white transition-transform focus:translate-y-0">Ir
+    para o conteúdo</a>
+
+  <header id="header"
+    class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300 md:hidden">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+      <a href="#inicio" class="flex items-center">
+        <img src="logo-beatriz-cully-transparent.png" alt="Dra. Beatriz Cully"
+          class="h-11 w-auto object-contain transition-all duration-300 sm:h-12">
+      </a>
+      <button id="menu-button" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false"
+        class="focus-ring grid h-11 w-11 place-items-center rounded-full border border-ink/10 bg-cream/75 backdrop-blur">
+        <svg id="menu-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-5 w-5" stroke="currentColor"
+          stroke-width="1.8">
+          <path stroke-linecap="round" d="M4 8h16M4 16h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu"
+      class="mx-5 hidden rounded-2xl border border-ink/10 bg-cream/95 p-4 shadow-soft backdrop-blur-xl md:hidden">
+      <nav class="grid gap-1 text-sm font-medium" aria-label="Navegação móvel">
+        <a class="rounded-xl px-4 py-3 hover:bg-white/50" href="#inicio">Início</a>
+        <a class="rounded-xl px-4 py-3 hover:bg-white/50" href="#video">Vídeo</a>
+        <a class="rounded-xl px-4 py-3 hover:bg-white/50" href="#sobre">Sobre</a>
+        <a class="rounded-xl px-4 py-3 hover:bg-white/50" href="#especialidades">Especialidades</a>
+        <a class="rounded-xl px-4 py-3 hover:bg-white/50" href="#contato">Contato</a>
+        <a class="mt-2 rounded-xl bg-coral px-4 py-3 text-center font-semibold" href="#contato">Agendar consulta</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Botão Flutuante de Contato com Animação Lottie em Círculo Creme -->
+  <div id="floating-contact" class="fixed bottom-5 right-5 z-[60] flex items-center gap-2.5 sm:bottom-7 sm:right-7">
+    <a href="#contato"
+      class="focus-ring flex items-center gap-2 rounded-full border border-ink/10 bg-cream/95 px-3.5 py-2 text-xs font-medium text-ink shadow-soft backdrop-blur-md transition-all duration-300 hover:-translate-x-1 hover:bg-cream">
+      <span>Atendimento é aqui</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-3.5 w-3.5 text-blue" stroke="currentColor"
+        stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+      </svg>
+    </a>
+
+    <a href="#contato" aria-label="Entrar em contato" title="Entrar em contato"
+      class="focus-ring group relative grid h-16 w-16 place-items-center overflow-hidden rounded-full border border-ink/10 bg-cream text-ink shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-card sm:h-[72px] sm:w-[72px]">
+      <dotlottie-wc src="https://lottie.host/8af09a08-4b4e-4139-823e-a386188a49a8/PmppkaNsbI.lottie" autoplay loop
+        speed="0.5"
+        class="h-full w-full pointer-events-none scale-125 transition-transform duration-500 group-hover:scale-135"></dotlottie-wc>
+    </a>
+  </div>
+
+  <main id="conteudo">
+    <section id="inicio" class="relative min-h-screen bg-cover bg-right bg-no-repeat"
+      style="background-image: url('hero.png');">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/80 to-cream/15 md:from-transparent md:via-transparent md:to-transparent">
+      </div>
+
+      <!-- Navegação Principal Desktop -->
+      <div class="absolute inset-x-0 top-8 z-20 hidden md:block">
+        <div class="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-8">
+          <nav aria-label="Navegação principal"
+            class="flex w-[600px] items-center justify-center gap-7 border-y border-ink/10 px-4 py-3 text-sm font-medium">
+            <a class="focus-ring transition-colors hover:text-blue" href="#inicio">Início</a>
+            <a class="focus-ring transition-colors hover:text-blue" href="#video">Vídeo</a>
+            <a class="focus-ring transition-colors hover:text-blue" href="#sobre">Sobre</a>
+            <a class="focus-ring transition-colors hover:text-blue" href="#especialidades">Especialidades</a>
+            <a class="focus-ring transition-colors hover:text-blue" href="#contato">Contato</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- DESKTOP HERO (Visível apenas em md+) -->
+      <div
+        class="relative mx-auto hidden min-h-screen max-w-[1380px] items-center px-5 pb-36 pt-28 sm:px-8 md:flex lg:px-8 lg:pb-40">
+        <div class="min-w-0 w-full max-w-[600px] rounded-3xl bg-transparent p-0 shadow-none backdrop-blur-none">
+          <h1 class="sr-only">Dra. Beatriz Cully — Psiquiatria</h1>
+          <div class="relative h-[150px] w-full overflow-hidden sm:h-[185px]" aria-hidden="true">
+            <img src="logo-beatriz-cully-psiquiatria-transparent.png?v=2" alt=""
+              class="hero-logo absolute left-1/2 top-1/2 w-[360px] max-w-none -translate-x-1/2 -translate-y-1/2 sm:w-[600px]">
+          </div>
+          <p
+            class="mx-auto mt-3 max-w-md text-base font-light leading-7 text-ink/75 sm:text-lg sm:leading-8 text-center">
+            Atendimento especializado em psiquiatria clínica com foco em acolhimento e precisão diagnóstica.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center justify-center gap-5">
+            <a href="#contato"
+              class="focus-ring group inline-flex items-center gap-3 rounded-full bg-coral px-7 py-4 text-sm font-semibold shadow-card transition hover:-translate-y-0.5 hover:bg-[#ffa894]">
+              Agendar uma consulta
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                class="h-4 w-4 transition-transform group-hover:translate-x-1" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+            <a href="#sobre"
+              class="focus-ring text-sm font-semibold underline decoration-ink/25 underline-offset-8 transition hover:decoration-ink">Conheça
+              minha trajetória</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE HERO (Foto Inteira Herocell na Tela Inicial) -->
+      <div class="relative mx-auto flex flex-col justify-center px-3 pb-6 pt-3 md:hidden">
+        <!-- Container Principal Mobile -->
+        <div class="w-full flex flex-col gap-3">
+
+          <!-- Card da Foto Inteira Herocell (Ocupa a tela inicial no celular) -->
+          <div id="mobile-hero-card"
+            class="relative w-full h-[calc(100vh-2.5rem)] min-h-[560px] max-h-[820px] overflow-hidden rounded-[30px] shadow-soft border border-ink/5 bg-[#FDF1E4]">
+            <!-- Imagem inteira herocell.png -->
+            <img src="herocell.png" alt="Dra. Beatriz Cully"
+              class="absolute inset-0 w-full h-full object-cover object-center block">
+
+            <!-- Logo posicionada no canto superior esquerdo -->
+            <div id="mobile-hero-logo" class="absolute top-5 left-5 z-10 w-[200px] max-w-[68%] sm:w-[230px]">
+              <img src="logo-beatriz-cully-psiquiatria-transparent.png?v=2" alt="Dra. Beatriz Cully"
+                class="h-auto w-full object-contain filter brightness-0 drop-shadow-sm">
+            </div>
+
+            <!-- CRM e Avaliação no canto superior direito -->
+            <div class="absolute top-5 right-5 z-10 flex flex-col items-end gap-1.5">
+              <span
+                class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-semibold text-ink shadow-sm backdrop-blur-md">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-3 w-3 text-amber-400">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                5.0
+              </span>
+              <span
+                class="rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-semibold text-ink shadow-sm backdrop-blur-md">CRM-SP
+                240387</span>
+            </div>
+          </div>
+
+          <!-- Card de Estatísticas & Credenciais (Aparece ao rolar a página) -->
+          <div class="mt-1 grid grid-cols-3 gap-2 rounded-2xl bg-white p-3.5 shadow-sm text-center border border-ink/5">
+            <div class="border-r border-ink/5 pr-1">
+              <span class="block text-[11px] font-semibold text-ink">Medicina</span>
+              <span class="block text-[10px] text-ink/50">UNINOVE</span>
+            </div>
+            <div class="border-r border-ink/5 px-1">
+              <span class="block text-[11px] font-semibold text-ink">Psiquiatria</span>
+              <span class="block text-[9px] font-medium text-blue">Pós-graduanda</span>
+              <span class="block text-[9px] text-ink/45">Santa Casa</span>
+            </div>
+            <div class="pl-1">
+              <span class="block text-[11px] font-semibold text-ink">Gestão em Saúde</span>
+              <span class="block text-[9px] font-medium text-blue">Pós-graduada</span>
+              <span class="block text-[9px] text-ink/45">Einstein</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Diferenciais do atendimento" class="relative z-10 -mt-16 px-5 sm:px-8 lg:px-10">
+      <div class="gallery-container">
+
+        <!-- Card 1: Atendimento Online -->
+        <div
+          class="group relative overflow-hidden rounded-3xl bg-white p-6 sm:p-7 shadow-soft border border-ink/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card flex flex-col justify-between">
+          <div>
+            <div
+              class="relative h-36 w-full overflow-hidden rounded-2xl bg-gradient-to-b from-[#E0F0EC]/80 to-[#E0F0EC]/20 flex items-center justify-center">
+              <dotlottie-wc src="https://lottie.host/1830d280-8c89-4b36-bd1e-1a2df5cf2818/5lYaaj3Wnp.lottie" autoplay
+                loop class="h-full w-full pointer-events-none scale-105"></dotlottie-wc>
+            </div>
+            <div class="mt-5">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#2B574C]">Modalidade</span>
+              <h2 class="font-display text-2xl font-medium leading-tight text-ink mt-1">Atendimento <span
+                  class="italic text-[#2B574C]">Online</span></h2>
+              <p class="mt-2 text-xs font-light leading-relaxed text-ink/65">Cuidado acessível, com privacidade e
+                conforto, onde quer que você esteja.</p>
+            </div>
+          </div>
+          <div class="mt-5 border-t border-ink/5 pt-3.5 flex items-center justify-between">
+            <span class="text-[11px] font-medium text-[#2B574C]/80">Para todo o Brasil</span>
+            <div class="h-1 w-8 rounded-full bg-[#A3D1C6] transition-all duration-300 group-hover:w-14"></div>
+          </div>
+        </div>
+
+        <!-- Card 2: Pacientes acima de 18 anos -->
+        <div
+          class="group relative overflow-hidden rounded-3xl bg-white p-6 sm:p-7 shadow-soft border border-ink/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card flex flex-col justify-between">
+          <div>
+            <div
+              class="relative h-36 w-full overflow-hidden rounded-2xl bg-gradient-to-b from-[#E8F2F8]/80 to-[#E8F2F8]/20 flex items-center justify-center">
+              <dotlottie-wc src="https://lottie.host/47a87047-645f-4260-9aad-b45cce3c4b62/3dzMElIk5j.lottie" autoplay
+                loop class="h-full w-full pointer-events-none scale-105"></dotlottie-wc>
+            </div>
+            <div class="mt-5">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1F425B]">Público</span>
+              <h2 class="font-display text-2xl font-medium leading-tight text-ink mt-1">Pacientes <span
+                  class="italic text-[#67A2C5]">acima de 18 anos</span></h2>
+              <p class="mt-2 text-xs font-light leading-relaxed text-ink/65">Atendimento psiquiátrico voltado a
+                pacientes adultos, a partir dos 18 anos.</p>
+            </div>
+          </div>
+          <div class="mt-5 border-t border-ink/5 pt-3.5 flex items-center justify-between">
+            <span class="text-[11px] font-medium text-[#1F425B]/80">Atendimento Adulto</span>
+            <div class="h-1 w-8 rounded-full bg-[#7FAFD0] transition-all duration-300 group-hover:w-14"></div>
+          </div>
+        </div>
+
+        <!-- Card 3: Cuidado Integral -->
+        <div
+          class="group relative overflow-hidden rounded-3xl bg-white p-6 sm:p-7 shadow-soft border border-ink/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card flex flex-col justify-between">
+          <div>
+            <div
+              class="relative h-36 w-full overflow-hidden rounded-2xl bg-gradient-to-b from-[#FDF1EE]/80 to-[#FDF1EE]/20 flex items-center justify-center">
+              <dotlottie-wc src="https://lottie.host/8f10df84-fb7a-4898-bb03-a987a3a6d6ac/RSb6SYFFDb.lottie" autoplay
+                loop class="h-full w-full pointer-events-none scale-105"></dotlottie-wc>
+            </div>
+            <div class="mt-5">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6E3B32]">Visão Sistêmica</span>
+              <h2 class="font-display text-2xl font-medium leading-tight text-ink mt-1">Cuidado <span
+                  class="italic text-[#6E3B32]">Integral</span></h2>
+              <p class="mt-2 text-xs font-light leading-relaxed text-ink/65">Um olhar atento e abrangente para a sua
+                história, rotina e necessidades singulares.</p>
+            </div>
+          </div>
+          <div class="mt-5 border-t border-ink/5 pt-3.5 flex items-center justify-between">
+            <span class="text-[11px] font-medium text-[#6E3B32]/80">Visão Holística</span>
+            <div class="h-1 w-8 rounded-full bg-[#F8BCAE] transition-all duration-300 group-hover:w-14"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="video" class="relative overflow-hidden px-5 pb-28 pt-24 sm:px-8 sm:pb-36 sm:pt-32 lg:px-10">
+      <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[.45fr_.55fr] lg:gap-12">
+        <div class="reveal">
+          <p class="mb-5 text-xs font-semibold uppercase tracking-[.23em] text-blue">Vídeo de apresentação</p>
+          <h2 class="font-display text-4xl font-medium leading-tight tracking-[-.025em] sm:text-5xl">Uma conversa sobre
+            <span class="italic text-blue">cuidado.</span>
+          </h2>
+          <p class="mt-6 max-w-md font-light leading-7 text-ink/65">Conheça um pouco mais sobre a Dra. Beatriz, sua
+            forma de conduzir o atendimento e o que esperar da primeira consulta.</p>
+        </div>
+
+        <div class="reveal overflow-hidden rounded-3xl bg-ink p-2 shadow-soft sm:p-3">
+          <div class="relative aspect-video overflow-hidden rounded-2xl bg-ink">
+            <video class="h-full w-full object-cover" controls preload="metadata" poster="image.png"
+              aria-label="Vídeo de apresentação da Dra. Beatriz Cully">
+              <source src="video-apresentacao.mp4" type="video/mp4">
+              Seu navegador não oferece suporte à reprodução de vídeo.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="relative overflow-hidden bg-white px-5 py-24 sm:px-8 sm:py-32 lg:px-10">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <!-- Text content -->
+        <div class="reveal">
+          <p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-blue">Me conheça melhor</p>
+          <h2
+            class="font-display text-4xl font-medium leading-tight tracking-[-0.025em] text-ink sm:text-5xl lg:text-6xl">
+            Sobre <span class="italic text-blue">mim.</span>
+          </h2>
+          <div class="mt-6 h-px w-20 bg-coral"></div>
+          <p class="mt-7 text-base font-light leading-8 text-ink/75 sm:text-lg">
+            Graduada em Medicina pela Universidade Nove de Julho, a Dra. Beatriz Cully é pós-graduada em Gestão em
+            Saúde pelo Hospital Israelita Albert Einstein e pós-graduanda em Psiquiatria pela Santa Casa de
+            Misericórdia de São Paulo.
+          </p>
+          <p class="mt-4 text-base font-light leading-8 text-ink/75 sm:text-lg">
+            Sua prática combina atualização científica, escuta cuidadosa e uma compreensão ampla da saúde mental para
+            construir, junto a cada paciente, um caminho terapêutico possível e individualizado.
+          </p>
+
+          <!-- Subtle CRM -->
+          <p class="mt-6 text-sm font-semibold tracking-wide text-ink/85">
+            Dra. Beatriz Cully <span class="ml-1 text-xs font-normal text-ink/60">(CRM-SP 240387)</span>
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-2.5">
+            <span
+              class="rounded-full border border-ink/10 bg-slate-50/80 px-4 py-2 text-xs font-medium text-ink/70">Medicina
+              · UNINOVE</span>
+            <span
+              class="rounded-full border border-ink/10 bg-slate-50/80 px-4 py-2 text-xs font-medium text-ink/70">Pós-graduanda
+              em Psiquiatria · Santa Casa</span>
+            <span
+              class="rounded-full border border-ink/10 bg-slate-50/80 px-4 py-2 text-xs font-medium text-ink/70">Pós-graduada
+              em Gestão em Saúde · Einstein</span>
+          </div>
+        </div>
+
+        <!-- Retrato original, sem moldura ou elementos decorativos -->
+        <div class="reveal mx-auto flex w-full max-w-lg items-end justify-center lg:justify-end">
+          <div class="portrait-wrapper-mobile">
+            <img src="beatriz2.png" alt="Dra. Beatriz Cully"
+              class="h-auto w-full max-w-[430px] object-contain sm:max-w-[470px]" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO CEO ZAYA ===== -->
+    <section id="zaya" class="relative overflow-hidden bg-[#FDF1E4] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+      <!-- Gradiente decorativo de fundo -->
+      <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div
+          style="position:absolute;top:-80px;right:-120px;width:500px;height:500px;background:radial-gradient(circle,rgba(91,46,62,0.07) 0%,transparent 70%);border-radius:50%;">
+        </div>
+        <div
+          style="position:absolute;bottom:-60px;left:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(155,206,193,0.12) 0%,transparent 70%);border-radius:50%;">
+        </div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl">
+        <!-- Label topo -->
+        <div class="reveal mb-10 text-center lg:text-left">
+          <p class="text-xs font-semibold uppercase tracking-[0.28em] text-[#5b2e3e]/60">Além do consultório</p>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-14 lg:flex-row lg:items-center lg:gap-20">
+
+          <!-- NOTEBOOK FLUTUANTE -->
+          <div class="relative flex-shrink-0 flex items-center justify-center w-full lg:w-auto"
+            style="min-height:460px;">
+            <!-- Halo decorativo atrás do notebook -->
+            <div
+              style="position:absolute;inset:0;margin:auto;width:580px;height:580px;background:radial-gradient(circle,rgba(91,46,62,0.09) 0%,rgba(155,206,193,0.07) 55%,transparent 78%);border-radius:50%;filter:blur(28px);">
+            </div>
+            <img src="zaya.png" alt="Notebook Zaya – plataforma de gestão em saúde" loading="lazy"
+              style="position:relative;z-index:2;width:min(620px,95vw);height:auto;object-fit:contain;animation:floatZaya 5s ease-in-out infinite;mix-blend-mode:multiply;filter:drop-shadow(0 20px 40px rgba(91,46,62,0.14));">
+          </div>
+
+          <!-- CONTEÚDO DIREITO -->
+          <div class="flex flex-col items-center text-center lg:items-start lg:text-left max-w-xl">
+
+            <!-- "CEO" + "da" + logo -->
+            <div class="flex flex-col items-center gap-2 lg:items-start">
+              <span
+                style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.2rem);font-weight:400;font-style:italic;color:#C5A059;background:linear-gradient(135deg, #D4AF37 0%, #A67C37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:0.95;letter-spacing:0.02em;">CEO</span>
+              <span
+                style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.8vw,1.15rem);font-weight:400;color:#C5A059;letter-spacing:0.22em;text-transform:uppercase;opacity:0.85;margin-top:0.1rem;">da</span>
+              <img src="logo.svg" alt="Zaya"
+                style="width:min(200px,60vw);height:auto;object-fit:contain;margin-top:0.4rem;">
+            </div>
+
+            <!-- Divisor elegante -->
+            <div
+              style="margin-top:1.5rem;margin-bottom:1.5rem;width:48px;height:2px;background:linear-gradient(90deg,#5b2e3e,#9BCEC1);border-radius:99px;">
+            </div>
+
+            <!-- Descrição -->
+            <p
+              style="font-family:'Inter',sans-serif;font-size:clamp(0.95rem,1.5vw,1.1rem);font-weight:300;line-height:1.85;color:#1A1A1Acc;max-width:480px;">
+              A <strong style="font-weight:600;color:#5b2e3e;">Zaya</strong> é uma plataforma de gestão inteligente
+              voltada para profissionais e clínicas de saúde. Com foco em eficiência e humanização, centraliza
+              agendamentos, prontuários e a comunicação com pacientes — permitindo que médicos como a Dra. Beatriz
+              dediquem mais tempo ao que realmente importa: <em>cuidar de pessoas</em>.
+            </p>
+
+            <!-- Chips de destaque -->
+            <div style="margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;"
+              class="lg:justify-start">
+              <span
+                style="padding:0.4rem 1rem;border-radius:999px;background:rgba(91,46,62,0.07);color:#5b2e3e;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;border:1px solid rgba(91,46,62,0.12);">Gestão
+                de Clínicas</span>
+              <span
+                style="padding:0.4rem 1rem;border-radius:999px;background:rgba(155,206,193,0.18);color:#2B574C;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;border:1px solid rgba(155,206,193,0.3);">Prontuário
+                Digital</span>
+              <span
+                style="padding:0.4rem 1rem;border-radius:999px;background:rgba(103,162,197,0.1);color:#1F425B;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;border:1px solid rgba(103,162,197,0.2);">Saúde
+                &amp; Tecnologia</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Animação flutuante -->
+      <style>
+        @keyframes floatZaya {
+          0% {
+            transform: translateY(0px) rotate(-0.5deg);
+          }
+
+          50% {
+            transform: translateY(-14px) rotate(0.5deg);
+          }
+
+          100% {
+            transform: translateY(0px) rotate(-0.5deg);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          [style*="floatZaya"] {
+            animation: none !important;
+          }
+        }
+      </style>
+    </section>
+    <!-- ===== FIM SEÇÃO CEO ZAYA ===== -->
+
+    <section id="especialidades" class="relative overflow-hidden bg-white px-5 py-24 sm:px-8 sm:py-28 lg:px-10">
+      <div class="relative mx-auto max-w-[1380px]">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <p class="mb-4 text-xs font-semibold uppercase tracking-[.23em] text-ink/45">Áreas de cuidado</p>
+          <h2 class="font-display text-4xl font-medium tracking-[-.025em] text-black sm:text-6xl">O que <span
+              class="italic">tratamos.</span></h2>
+          <p class="mx-auto mt-5 max-w-xl text-base font-light leading-7 text-black/55 sm:text-lg">Passe o cursor ou
+            toque em uma área para explorar.</p>
+        </div>
+
+        <div class="interactive-wrapper reveal mt-12">
+          <div class="interactive-container">
+            <!-- Camada SVG para Setas -->
+            <svg id="svg-layer" viewBox="0 0 1000 500">
+              <defs>
+                <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <polygon points="0 0, 6 3, 0 6" fill="#444" />
+                </marker>
+              </defs>
+
+              <path id="arrow-ansiosos" class="arrow-path" d="M 270 115 C 325 115, 355 140, 390 175"
+                marker-end="url(#arrowhead)" />
+              <path id="arrow-tdah" class="arrow-path" d="M 270 275 C 335 275, 370 290, 410 305"
+                marker-end="url(#arrowhead)" />
+              <path id="arrow-toc" class="arrow-path" d="M 270 420 C 370 420, 470 390, 555 350"
+                marker-end="url(#arrowhead)" />
+              <path id="arrow-estresse" class="arrow-path" d="M 730 105 C 670 105, 635 125, 590 160"
+                marker-end="url(#arrowhead)" />
+              <path id="arrow-tdm" class="arrow-path" d="M 730 250 C 685 250, 655 240, 625 220"
+                marker-end="url(#arrowhead)" />
+              <path id="arrow-tab" class="arrow-path" d="M 730 405 C 650 405, 575 395, 510 375"
+                marker-end="url(#arrowhead)" />
+            </svg>
+
+            <!-- Coluna Esquerda -->
+            <div class="interactive-column left">
+              <button type="button" class="interactive-card card" data-target="ansiosos" aria-pressed="false">
+                <h3>Transtornos ansiosos</h3>
+                <p>TAG, fobia social, fobia específica e agorafobia.</p>
+              </button>
+              <button type="button" class="interactive-card card" data-target="tdah" aria-pressed="false">
+                <h3>TDAH</h3>
+                <p>Atenção, organização, hiperatividade e impulsividade.</p>
+              </button>
+              <button type="button" class="interactive-card card" data-target="toc" aria-pressed="false">
+                <h3>TOC</h3>
+                <p>Pensamentos obsessivos e comportamentos compulsivos.</p>
+              </button>
+            </div>
+
+            <!-- Cérebro Flutuante (Formato Anatômico Realista) -->
+            <div class="brain-area">
+              <svg viewBox="0 0 500 450" width="100%" height="100%" id="brain-svg">
+                <g id="brain-group">
+                  <!-- Lobo Frontal (Transtornos ansiosos - Azul) -->
+                  <path id="region-ansiosos" class="brain-region" fill="#81A9D0"
+                    d="M 240 60 C 140 40 70 100 50 180 C 40 240 90 290 140 300 C 180 310 230 280 260 250 C 270 200 270 120 240 60 Z" />
+
+                  <!-- Lobo Parietal (Estresse - Verde) -->
+                  <path id="region-estresse" class="brain-region" fill="#92CDB1"
+                    d="M 240 60 C 270 120 270 200 260 250 C 300 260 340 240 360 220 C 400 190 430 140 400 90 C 370 40 290 40 240 60 Z" />
+
+                  <!-- Lobo Temporal (TDAH - Rosa/Salmão) -->
+                  <path id="region-tdah" class="brain-region" fill="#F0948F"
+                    d="M 140 300 C 180 310 230 280 260 250 C 300 260 340 240 360 220 C 340 280 290 320 220 330 C 170 340 145 325 140 300 Z" />
+
+                  <!-- Lobo Occipital (TDM - Bege) -->
+                  <path id="region-tdm" class="brain-region" fill="#EAD6C9"
+                    d="M 360 220 C 400 190 430 140 400 90 C 440 130 460 190 440 240 C 420 290 380 300 350 280 C 360 250 350 230 360 220 Z" />
+
+                  <!-- Cerebelo (TOC - Verde inferior) -->
+                  <path id="region-toc" class="brain-region" fill="#85C3AD"
+                    d="M 350 280 C 400 290 420 340 380 380 C 340 420 280 390 280 340 C 290 310 320 290 350 280 Z" />
+
+                  <!-- Tronco Cerebral (TAB - Azul inferior) -->
+                  <path id="region-tab" class="brain-region" fill="#6EA6DD"
+                    d="M 220 330 C 280 320 280 340 280 340 C 280 380 260 430 220 430 C 200 430 210 360 220 330 Z" />
+
+                  <!-- Linhas de Sulcos (Detalhes anatômicos abstratos para realismo) -->
+                  <path class="brain-sulci ansiosos-sulci" d="M 80 140 C 110 130 140 160 160 140" />
+                  <path class="brain-sulci ansiosos-sulci" d="M 90 210 C 130 200 150 250 190 220" />
+
+                  <path class="brain-sulci estresse-sulci" d="M 280 110 C 320 100 340 140 370 120" />
+                  <path class="brain-sulci estresse-sulci" d="M 290 180 C 330 190 340 160 380 170" />
+
+                  <path class="brain-sulci tdah-sulci" d="M 170 280 C 210 270 240 290 280 270" />
+
+                  <path class="brain-sulci tdm-sulci" d="M 390 160 C 420 170 410 210 430 220" />
+
+                  <!-- Cerebelo linhas horizontais simulando folhas -->
+                  <path class="brain-sulci toc-sulci" d="M 300 320 C 330 320 360 310 380 330" />
+                  <path class="brain-sulci toc-sulci" d="M 300 340 C 340 340 370 330 390 350" />
+                  <path class="brain-sulci toc-sulci" d="M 310 360 C 340 360 360 350 370 370" />
+                  <path class="brain-sulci tab-sulci" d="M 230 350 C 245 360 250 385 240 405" />
+                </g>
+              </svg>
+            </div>
+
+            <!-- Coluna Direita -->
+            <div class="interactive-column right">
+              <button type="button" class="interactive-card card" data-target="estresse" aria-pressed="false">
+                <h3>Estresse</h3>
+                <p>Sobrecarga, tensão e esgotamento mental e físico.</p>
+              </button>
+              <button type="button" class="interactive-card card" data-target="tdm" aria-pressed="false">
+                <h3>TDM</h3>
+                <p>Transtorno depressivo maior.</p>
+              </button>
+              <button type="button" class="interactive-card card" data-target="tab" aria-pressed="false">
+                <h3>TAB</h3>
+                <p>Transtorno afetivo bipolar.</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 py-28 sm:px-8 sm:py-36 lg:px-10">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p class="mb-5 text-xs font-semibold uppercase tracking-[.23em] text-blue">Nossa abordagem</p>
+            <h2 class="max-w-2xl font-display text-4xl font-medium leading-tight tracking-[-.025em] sm:text-5xl">
+              Ciência, presença e <span class="italic text-blue">individualidade.</span></h2>
+          </div>
+          <p class="max-w-sm font-light leading-7 text-ink/60">O cuidado começa por compreender você por inteiro — não
+            apenas um conjunto de sintomas.</p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-3 lg:mt-20">
+          <article
+            class="group reveal relative overflow-hidden flex min-h-[330px] flex-col justify-between rounded-3xl bg-ink p-8 text-cream shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-overlay transition-all duration-700 group-hover:scale-105 group-hover:opacity-25 pointer-events-none"
+              style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80');">
+            </div>
+            <div class="relative z-10 flex items-center justify-end">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-7 w-7 text-sage" stroke="currentColor"
+                stroke-width="1.4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 3h6m-5 4h4m-7 4h10M8 21h8a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3Z" />
+              </svg>
+            </div>
+            <div class="relative z-10">
+              <h3 class="font-display text-3xl">Base Científica</h3>
+              <p class="mt-4 text-sm font-light leading-6 text-cream/65">Decisões clínicas orientadas por evidências
+                atuais, avaliação criteriosa e acompanhamento contínuo.</p>
+            </div>
+          </article>
+
+          <article
+            class="group reveal relative overflow-hidden flex min-h-[330px] flex-col justify-between rounded-3xl bg-blue p-8 text-white shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-overlay transition-all duration-700 group-hover:scale-105 group-hover:opacity-25 pointer-events-none"
+              style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80');">
+              iv>
+              <div class="relative z-10 flex items-center justify-end">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-7 w-7 text-cream" stroke="currentColor"
+                  stroke-width="1.4">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 12a8 8 0 1 1 3 6.25L3 21l1.15-4.1A8 8 0 0 1 4 12Z" />
+                </svg>
+              </div>
+              <div class="relative z-10">
+                <h3 class="font-display text-3xl">Escuta Ativa<br>e Atenta</h3>
+                <p class="mt-4 text-sm font-light leading-6 text-white/75">Um espaço seguro, respeitoso e sem
+                  julgamentos
+                  para acolher o que você vive e sente.</p>
+              </div>
+          </article>
+
+          <article
+            class="group reveal relative overflow-hidden flex min-h-[330px] flex-col justify-between rounded-3xl bg-sage p-8 shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-multiply transition-all duration-700 group-hover:scale-105 group-hover:opacity-25 pointer-events-none"
+              style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');">
+            </div>
+            <div class="relative z-10 flex items-center justify-end">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-7 w-7 text-ink" stroke="currentColor"
+                stroke-width="1.4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-8-8h16m-3.5-6.5-9 13m0-13 9 13" />
+              </svg>
+            </div>
+            <div class="relative z-10">
+              <h3 class="font-display text-3xl">Plano Terapêutico Individualizado</h3>
+              <p class="mt-4 text-sm font-light leading-6 text-ink/65">Uma proposta construída de forma colaborativa,
+                considerando necessidades, preferências e realidade.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="bg-ink px-5 py-28 text-cream sm:px-8 sm:py-36 lg:px-10">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="reveal">
+          <p class="mb-5 text-xs font-semibold uppercase tracking-[.23em] text-sage">Entre em contato</p>
+          <h2 class="font-display text-4xl font-medium leading-tight tracking-[-.025em] sm:text-5xl lg:text-6xl">Seu
+            cuidado pode<br><span class="italic text-coral">começar aqui.</span></h2>
+        </div>
+
+        <form id="contact-form"
+          class="reveal mt-12 rounded-3xl bg-cream p-7 text-left text-ink shadow-soft sm:p-10 lg:p-12">
+          <div class="mb-10">
+            <h3 class="font-display text-3xl">Solicite seu atendimento</h3>
+            <p class="mt-3 text-sm font-light leading-6 text-ink/60">Preencha os campos abaixo. Entraremos em contato
+              para combinar os próximos passos.</p>
+          </div>
+
+          <div class="grid gap-7 sm:grid-cols-2">
+            <label class="block text-xs font-semibold uppercase tracking-[.13em]">
+              Nome
+              <input required name="nome" autocomplete="name" type="text" placeholder="Como podemos chamar você?"
+                class="mt-3 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0">
+            </label>
+            <label class="block text-xs font-semibold uppercase tracking-[.13em]">
+              E-mail
+              <input required name="email" autocomplete="email" type="email" placeholder="seu@email.com"
+                class="mt-3 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0">
+            </label>
+            <label class="block text-xs font-semibold uppercase tracking-[.13em] sm:col-span-2">
+              Motivo da consulta
+              <select required name="motivo"
+                class="mt-3 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none transition focus:border-blue focus:ring-0">
+                <option value="">Selecione uma opção</option>
+                <option>Transtornos ansiosos</option>
+                <option>Estresse</option>
+                <option>TDAH</option>
+                <option>TDM — Transtorno depressivo maior</option>
+                <option>TOC</option>
+                <option>TAB</option>
+                <option>Outro motivo</option>
+              </select>
+            </label>
+            <label class="block text-xs font-semibold uppercase tracking-[.13em] sm:col-span-2">
+              Mensagem
+              <textarea required name="mensagem" rows="4" placeholder="Conte brevemente como podemos ajudar."
+                class="mt-3 w-full resize-none border-0 border-b border-ink/20 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0"></textarea>
+            </label>
+          </div>
+
+          <div class="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <p class="max-w-xs text-[11px] leading-5 text-ink/45">Ao enviar, você concorda com o uso destes dados
+              exclusivamente para retorno do contato.</p>
+            <button type="submit"
+              class="focus-ring group inline-flex items-center justify-center gap-3 rounded-full bg-coral px-7 py-4 text-sm font-semibold text-ink transition hover:bg-[#ffa894]">
+              Enviar mensagem
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                class="h-4 w-4 transition-transform group-hover:translate-x-1" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </button>
+          </div>
+          <p id="form-status" role="status" class="mt-5 hidden rounded-xl bg-sage/35 p-4 text-sm">Mensagem preparada.
+            Configure o e-mail ou serviço de formulário para concluir o envio.</p>
+        </form>
+
+        <div class="reveal mt-12 flex flex-col items-center gap-4 text-center">
+          <div>
+            <p class="text-xs uppercase tracking-[.18em] text-cream/45">E-mail</p>
+            <a href="mailto:drabeatrizcully@gmail.com"
+              class="focus-ring mt-1 inline-block text-sm font-medium transition hover:text-coral">drabeatrizcully@gmail.com</a>
+          </div>
+          <p class="max-w-md text-xs leading-5 text-cream/45">Em situações de urgência ou emergência, procure o pronto
+            atendimento mais próximo ou ligue para o SAMU 192.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-cream/10 bg-ink px-5 py-8 text-cream sm:px-8 lg:px-10">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-5 text-xs text-cream/45 sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span id="year"></span> Dra. Beatriz Cully · CRM-SP 240387</p>
+      <div class="flex flex-wrap gap-5">
+        <a href="#inicio" class="focus-ring transition hover:text-cream">Voltar ao início</a>
+        <span>Atendimento exclusivamente online</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    const mobileHeroLogo = document.getElementById('mobile-hero-logo');
+    const mobileHeroCard = document.getElementById('mobile-hero-card');
+
+    const updateHeader = () => {
+      const scrolled = window.scrollY > 40;
+      header.classList.toggle('header-hidden', !scrolled);
+      header.classList.toggle('header-visible', scrolled);
+      header.classList.toggle('bg-cream/95', scrolled);
+      header.classList.toggle('backdrop-blur-xl', scrolled);
+      header.classList.toggle('border-ink/10', scrolled);
+      header.classList.toggle('shadow-sm', scrolled);
+
+      if (mobileHeroLogo) {
+        mobileHeroLogo.classList.toggle('scale-105', !scrolled);
+        mobileHeroLogo.classList.toggle('scale-95', scrolled);
+      }
+      if (mobileHeroCard) {
+        mobileHeroCard.classList.toggle('scale-100', !scrolled);
+        mobileHeroCard.classList.toggle('scale-[0.98]', scrolled);
+      }
+    };
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menu');
+    }));
+
+    const cards = [...document.querySelectorAll('.card[data-target]')];
+    const brainRegions = [...document.querySelectorAll('.brain-region')];
+    const brainSulci = [...document.querySelectorAll('.brain-sulci')];
+    const brainArrows = [...document.querySelectorAll('.arrow-path')];
+    let pinnedTarget = null;
+
+    const showBrainTarget = (targetId) => {
+      brainArrows.forEach(arrow => arrow.classList.toggle('active', arrow.id === `arrow-${targetId}`));
+
+      brainRegions.forEach(region => {
+        const isTarget = region.id === `region-${targetId}`;
+        region.classList.toggle('highlighted', Boolean(targetId) && isTarget);
+        region.classList.toggle('dimmed', Boolean(targetId) && !isTarget);
+      });
+
+      brainSulci.forEach(sulcus => {
+        const belongsToTarget = sulcus.classList.contains(`${targetId}-sulci`);
+        sulcus.classList.toggle('dimmed', Boolean(targetId) && !belongsToTarget);
+      });
+    };
+
+    const updatePinnedCards = () => {
+      cards.forEach(card => {
+        const isPinned = card.dataset.target === pinnedTarget;
+        card.classList.toggle('active', isPinned);
+        card.setAttribute('aria-pressed', String(isPinned));
+      });
+    };
+
+    cards.forEach(card => {
+      const targetId = card.dataset.target;
+
+      card.addEventListener('pointerenter', () => showBrainTarget(targetId));
+      card.addEventListener('pointerleave', () => showBrainTarget(pinnedTarget));
+      card.addEventListener('focus', () => showBrainTarget(targetId));
+      card.addEventListener('blur', () => showBrainTarget(pinnedTarget));
+      card.addEventListener('click', () => {
+        pinnedTarget = pinnedTarget === targetId ? null : targetId;
+        updatePinnedCards();
+        showBrainTarget(pinnedTarget);
+      });
+    });
+
+    document.querySelectorAll('main .grid').forEach(grid => {
+      grid.querySelectorAll(':scope > article').forEach((element, index) => {
+        element.classList.add('reveal');
+        element.style.setProperty('--reveal-delay', `${index * 90}ms`);
+      });
+    });
+
+    document.querySelectorAll('footer > div').forEach(element => element.classList.add('reveal'));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -7% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.getElementById('contact-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      document.getElementById('form-status').classList.remove('hidden');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    if (window.location.hash) {
+      const scrollToHash = () => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          document.documentElement.style.scrollBehavior = 'auto';
+          target.scrollIntoView({ block: 'start' });
+          window.requestAnimationFrame(() => document.documentElement.style.removeProperty('scroll-behavior'));
+        }
+      };
+      window.addEventListener('load', () => window.setTimeout(scrollToHash, 100), { once: true });
+      window.setTimeout(scrollToHash, 1200);
+    }
+  </script>
+</body>
+
+</html>
