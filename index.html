@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Atendimento online em psiquiatria clínica com a Dra. Beatriz Cully para pacientes a partir de 18 anos.">
-  <meta name="theme-color" content="#FDF1E4">
+  <meta name="theme-color" content="#FFFFFF">
   <!-- SEO & Favicon -->
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <meta property="og:title" content="Dra. Beatriz Cully | Psiquiatria">
@@ -31,7 +31,7 @@
       theme: {
         extend: {
           colors: {
-            cream: '#FDF1E4',
+            cream: '#FFFFFF',
             coral: '#FFB6A6',
             sage: '#9BCEC1',
             blue: '#67A2C5',
@@ -63,7 +63,7 @@
       --peach-dark: #6E3B32;
       --peach-light: #FDF1EE;
 
-      --bg-page: #FDF1E4;
+      --bg-page: #FFFFFF;
       --text-dark: #1A1A1A;
     }
 
@@ -855,7 +855,7 @@
       </div>
     </section>
 
-    <section aria-label="Diferenciais do atendimento" class="relative z-10 -mt-16 px-5 sm:px-8 lg:px-10">
+    <section aria-label="Diferenciais do atendimento" class="relative z-10 -mt-16 bg-white px-5 sm:px-8 lg:px-10">
       <div class="gallery-container">
 
         <!-- Card 1: Atendimento Online -->
@@ -930,7 +930,7 @@
       </div>
     </section>
 
-    <section id="video" class="relative overflow-hidden px-5 pb-28 pt-24 sm:px-8 sm:pb-36 sm:pt-32 lg:px-10">
+    <section id="video" class="relative overflow-hidden bg-white px-5 pb-28 pt-24 sm:px-8 sm:pb-36 sm:pt-32 lg:px-10">
       <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[.45fr_.55fr] lg:gap-12">
         <div class="reveal">
           <p class="mb-5 text-xs font-semibold uppercase tracking-[.23em] text-blue">Vídeo de apresentação</p>
@@ -1232,63 +1232,73 @@
             apenas um conjunto de sintomas.</p>
         </div>
 
-        <div class="mt-14 grid gap-5 md:grid-cols-3 lg:mt-20">
+        <div class="mt-14 grid gap-6 md:grid-cols-3 lg:mt-20">
+          <!-- Card 1: Base Científica -->
           <article
-            class="group reveal relative overflow-hidden flex min-h-[330px] flex-col justify-between rounded-3xl bg-ink p-8 text-cream shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
+            class="group reveal relative flex min-h-[350px] flex-col justify-between overflow-hidden rounded-3xl bg-[#1E2B37] p-8 text-white shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
             <div
-              class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-overlay transition-all duration-700 group-hover:scale-105 group-hover:opacity-25 pointer-events-none"
+              class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay transition-all duration-700 group-hover:scale-105 group-hover:opacity-40 pointer-events-none"
               style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80');">
             </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1E2B37] via-[#1E2B37]/60 to-transparent pointer-events-none"></div>
             <div class="relative z-10 flex items-center justify-end">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-7 w-7 text-sage" stroke="currentColor"
-                stroke-width="1.4">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 3h6m-5 4h4m-7 4h10M8 21h8a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3Z" />
-              </svg>
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/15">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-white" stroke="currentColor" stroke-width="1.6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 3h6m-5 4h4m-7 4h10M8 21h8a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3Z" />
+                </svg>
+              </div>
             </div>
             <div class="relative z-10">
-              <h3 class="font-display text-3xl">Base Científica</h3>
-              <p class="mt-4 text-sm font-light leading-6 text-cream/65">Decisões clínicas orientadas por evidências
+              <h3 class="font-display text-3xl font-medium text-white">Base Científica</h3>
+              <p class="mt-4 text-sm font-light leading-relaxed text-white/85">Decisões clínicas orientadas por evidências
                 atuais, avaliação criteriosa e acompanhamento contínuo.</p>
             </div>
           </article>
 
+          <!-- Card 2: Escuta Ativa e Atenta -->
           <article
-            class="group reveal relative overflow-hidden flex min-h-[330px] flex-col justify-between rounded-3xl bg-blue p-8 text-white shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
+            class="group reveal relative flex min-h-[350px] flex-col justify-between overflow-hidden rounded-3xl bg-[#67A2C5] p-8 text-white shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
             <div
-              class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-overlay transition-all duration-700 group-hover:scale-105 group-hover:opacity-25 pointer-events-none"
+              class="absolute inset-0 bg-cover bg-center opacity-35 mix-blend-overlay transition-all duration-700 group-hover:scale-105 group-hover:opacity-45 pointer-events-none"
               style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80');">
-              iv>
-              <div class="relative z-10 flex items-center justify-end">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-7 w-7 text-cream" stroke="currentColor"
-                  stroke-width="1.4">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#3B7295] via-[#67A2C5]/70 to-transparent pointer-events-none"></div>
+            <div class="relative z-10 flex items-center justify-end">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/15">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-white" stroke="currentColor"
+                  stroke-width="1.6">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M4 12a8 8 0 1 1 3 6.25L3 21l1.15-4.1A8 8 0 0 1 4 12Z" />
                 </svg>
               </div>
-              <div class="relative z-10">
-                <h3 class="font-display text-3xl">Escuta Ativa<br>e Atenta</h3>
-                <p class="mt-4 text-sm font-light leading-6 text-white/75">Um espaço seguro, respeitoso e sem
-                  julgamentos
-                  para acolher o que você vive e sente.</p>
-              </div>
-          </article>
-
-          <article
-            class="group reveal relative overflow-hidden flex min-h-[330px] flex-col justify-between rounded-3xl bg-sage p-8 shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
-            <div
-              class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-multiply transition-all duration-700 group-hover:scale-105 group-hover:opacity-25 pointer-events-none"
-              style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');">
-            </div>
-            <div class="relative z-10 flex items-center justify-end">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-7 w-7 text-ink" stroke="currentColor"
-                stroke-width="1.4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-8-8h16m-3.5-6.5-9 13m0-13 9 13" />
-              </svg>
             </div>
             <div class="relative z-10">
-              <h3 class="font-display text-3xl">Plano Terapêutico Individualizado</h3>
-              <p class="mt-4 text-sm font-light leading-6 text-ink/65">Uma proposta construída de forma colaborativa,
+              <h3 class="font-display text-3xl font-medium text-white">Escuta Ativa<br>e Atenta</h3>
+              <p class="mt-4 text-sm font-light leading-relaxed text-white/90">Um espaço seguro, respeitoso e sem
+                julgamentos para acolher o que você vive e sente.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Plano Terapêutico Individualizado -->
+          <article
+            class="group reveal relative flex min-h-[350px] flex-col justify-between overflow-hidden rounded-3xl bg-[#2B574C] p-8 text-white shadow-soft transition duration-300 hover:-translate-y-1 sm:p-10">
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay transition-all duration-700 group-hover:scale-105 group-hover:opacity-40 pointer-events-none"
+              style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1F4038] via-[#2B574C]/70 to-transparent pointer-events-none"></div>
+            <div class="relative z-10 flex items-center justify-end">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/15">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-white" stroke="currentColor"
+                  stroke-width="1.6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-8-8h16m-3.5-6.5-9 13m0-13 9 13" />
+                </svg>
+              </div>
+            </div>
+            <div class="relative z-10">
+              <h3 class="font-display text-3xl font-medium text-white">Plano Terapêutico Individualizado</h3>
+              <p class="mt-4 text-sm font-light leading-relaxed text-white/85">Uma proposta construída de forma colaborativa,
                 considerando necessidades, preferências e realidade.</p>
             </div>
           </article>
