@@ -1728,29 +1728,39 @@
       const sofrimento = getRadioVal('sofrimento');
 
       const phone = '5511976702520';
-      const formattedText = `📋 *FORMULÁRIO PRÉ-CONSULTA*\n` +
+      const clip = '\u{1F4CB}';
+      const userIcon = '\u{1F464}';
+      const brain = '\u{1F9E0}';
+      const chat = '\u{1F4AC}';
+      const check = '\u{2705}';
+      const bullet = '\u{1F539}';
+      const sub = '\u{2514}';
+      const dividerHeavy = '\u{2501}'.repeat(22);
+      const dividerLight = '\u{2500}'.repeat(22);
+
+      const formattedText = `${clip} *FORMULÁRIO PRÉ-CONSULTA*\n` +
                             `*Dra. Beatriz Franke Cully | CRMSP 240387*\n\n` +
-                            `━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-                            `👤 *1. IDENTIFICAÇÃO*\n\n` +
-                            `🔹 *Nome:* ${nome}\n` +
-                            `🔹 *Idade:* ${idade} anos\n` +
-                            `🔹 *Telefone:* ${telefone}\n\n` +
-                            `──────────────────────\n\n` +
-                            `🧠 *2. HISTÓRICO EM SAÚDE MENTAL*\n\n` +
-                            `1️⃣ *Acompanhamento psiquiátrico prévio:* ${psiquiatraPrevio}` + (psiquiatraPrevio === 'Sim' && psiquiatraTempo ? `\n    └ *Tempo:* ${psiquiatraTempo}` : '') + `\n\n` +
-                            `2️⃣ *Diagnóstico prévio:*\n${diagnosticoPrevio ? diagnosticoPrevio : 'Não informado / Nenhum'}\n\n` +
-                            `3️⃣ *Medicação psiquiátrica anterior:* ${medicacaoAnterior}` + (medicacaoAnterior === 'Sim' && medicacaoAnteriorDet ? `\n    └ *Detalhes:* ${medicacaoAnteriorDet}` : '') + `\n\n` +
-                            `4️⃣ *Medicação psiquiátrica atual:* ${medicacaoAtual}` + (medicacaoAtual === 'Sim' && medicacaoAtualDet ? `\n    └ *Detalhes:* ${medicacaoAtualDet}` : '') + `\n\n` +
-                            `5️⃣ *Psicoterapia:* ${psicoterapia}\n\n` +
-                            `──────────────────────\n\n` +
-                            `💬 *3. QUEIXA ATUAL*\n\n` +
-                            `6️⃣ *Motivo da consulta:*\n"${motivoAtendimento}"\n\n` +
-                            `🔹 *Sofrimento emocional:* ${sofrimento}\n\n` +
-                            `──────────────────────\n\n` +
-                            `✅ *4. CONSENTIMENTO*\n` +
+                            `${dividerHeavy}\n\n` +
+                            `${userIcon} *1. IDENTIFICAÇÃO*\n\n` +
+                            `${bullet} *Nome:* ${nome}\n` +
+                            `${bullet} *Idade:* ${idade} anos\n` +
+                            `${bullet} *Telefone:* ${telefone}\n\n` +
+                            `${dividerLight}\n\n` +
+                            `${brain} *2. HISTÓRICO EM SAÚDE MENTAL*\n\n` +
+                            `1. *Acompanhamento psiquiátrico prévio:* ${psiquiatraPrevio}` + (psiquiatraPrevio === 'Sim' && psiquiatraTempo ? `\n    ${sub} *Tempo:* ${psiquiatraTempo}` : '') + `\n\n` +
+                            `2. *Diagnóstico prévio:*\n${diagnosticoPrevio ? diagnosticoPrevio : 'Não informado / Nenhum'}\n\n` +
+                            `3. *Medicação psiquiátrica anterior:* ${medicacaoAnterior}` + (medicacaoAnterior === 'Sim' && medicacaoAnteriorDet ? `\n    ${sub} *Detalhes:* ${medicacaoAnteriorDet}` : '') + `\n\n` +
+                            `4. *Medicação psiquiátrica atual:* ${medicacaoAtual}` + (medicacaoAtual === 'Sim' && medicacaoAtualDet ? `\n    ${sub} *Detalhes:* ${medicacaoAtualDet}` : '') + `\n\n` +
+                            `5. *Psicoterapia:* ${psicoterapia}\n\n` +
+                            `${dividerLight}\n\n` +
+                            `${chat} *3. QUEIXA ATUAL*\n\n` +
+                            `6. *Motivo da consulta:*\n"${motivoAtendimento}"\n\n` +
+                            `${bullet} *Sofrimento emocional:* ${sofrimento}\n\n` +
+                            `${dividerLight}\n\n` +
+                            `${check} *4. CONSENTIMENTO*\n` +
                             `Declaro que as informações fornecidas são verdadeiras.\n` +
-                            `└ *Status:* Li e concordo.\n\n` +
-                            `━━━━━━━━━━━━━━━━━━━━━━\n` +
+                            `${sub} *Status:* Li e concordo.\n\n` +
+                            `${dividerHeavy}\n` +
                             `_Enviado através do site oficial_`;
 
       const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(formattedText)}`;
