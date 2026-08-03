@@ -1730,22 +1730,28 @@
       const phone = '5511976702520';
       const formattedText = `📋 *FORMULÁRIO PRÉ-CONSULTA*\n` +
                             `*Dra. Beatriz Franke Cully | CRMSP 240387*\n\n` +
-                            `👤 *1. IDENTIFICAÇÃO*\n` +
-                            `• *Nome:* ${nome}\n` +
-                            `• *Idade:* ${idade}\n` +
-                            `• *Telefone:* ${telefone}\n\n` +
-                            `🧠 *2. HISTÓRICO EM SAÚDE MENTAL*\n` +
-                            `1. *Acompanhamento com psiquiatra:* ${psiquiatraPrevio}` + (psiquiatraPrevio === 'Sim' && psiquiatraTempo ? ` (Tempo: ${psiquiatraTempo})` : '') + `\n` +
-                            `2. *Diagnóstico prévio:* ${diagnosticoPrevio || 'Não informado / Nenhum'}\n` +
-                            `3. *Medicação psiquiátrica anterior:* ${medicacaoAnterior}` + (medicacaoAnterior === 'Sim' && medicacaoAnteriorDet ? ` (${medicacaoAnteriorDet})` : '') + `\n` +
-                            `4. *Medicação psiquiátrica atual:* ${medicacaoAtual}` + (medicacaoAtual === 'Sim' && medicacaoAtualDet ? ` (${medicacaoAtualDet})` : '') + `\n` +
-                            `5. *Psicoterapia:* ${psicoterapia}\n\n` +
-                            `💭 *3. QUEIXA ATUAL*\n` +
-                            `6. *Motivo da consulta:* ${motivoAtendimento}\n` +
-                            `• *Sofrimento emocional:* ${sofrimento}\n\n` +
+                            `━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+                            `👤 *1. IDENTIFICAÇÃO*\n\n` +
+                            `🔹 *Nome:* ${nome}\n` +
+                            `🔹 *Idade:* ${idade} anos\n` +
+                            `🔹 *Telefone:* ${telefone}\n\n` +
+                            `──────────────────────\n\n` +
+                            `🧠 *2. HISTÓRICO EM SAÚDE MENTAL*\n\n` +
+                            `1️⃣ *Acompanhamento psiquiátrico prévio:* ${psiquiatraPrevio}` + (psiquiatraPrevio === 'Sim' && psiquiatraTempo ? `\n    └ *Tempo:* ${psiquiatraTempo}` : '') + `\n\n` +
+                            `2️⃣ *Diagnóstico prévio:*\n${diagnosticoPrevio ? diagnosticoPrevio : 'Não informado / Nenhum'}\n\n` +
+                            `3️⃣ *Medicação psiquiátrica anterior:* ${medicacaoAnterior}` + (medicacaoAnterior === 'Sim' && medicacaoAnteriorDet ? `\n    └ *Detalhes:* ${medicacaoAnteriorDet}` : '') + `\n\n` +
+                            `4️⃣ *Medicação psiquiátrica atual:* ${medicacaoAtual}` + (medicacaoAtual === 'Sim' && medicacaoAtualDet ? `\n    └ *Detalhes:* ${medicacaoAtualDet}` : '') + `\n\n` +
+                            `5️⃣ *Psicoterapia:* ${psicoterapia}\n\n` +
+                            `──────────────────────\n\n` +
+                            `💬 *3. QUEIXA ATUAL*\n\n` +
+                            `6️⃣ *Motivo da consulta:*\n"${motivoAtendimento}"\n\n` +
+                            `🔹 *Sofrimento emocional:* ${sofrimento}\n\n` +
+                            `──────────────────────\n\n` +
                             `✅ *4. CONSENTIMENTO*\n` +
-                            `Declaro que as informações são verdadeiras (Li e concordo).\n\n` +
-                            `---\n_Enviado através do site oficial_`;
+                            `Declaro que as informações fornecidas são verdadeiras.\n` +
+                            `└ *Status:* Li e concordo.\n\n` +
+                            `━━━━━━━━━━━━━━━━━━━━━━\n` +
+                            `_Enviado através do site oficial_`;
 
       const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(formattedText)}`;
 
