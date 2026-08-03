@@ -1323,68 +1323,232 @@
       </div>
     </section>
 
-    <section id="contato" class="bg-ink px-5 py-28 text-cream sm:px-8 sm:py-36 lg:px-10">
+    <section id="contato" class="bg-ink px-5 py-24 text-cream sm:px-8 sm:py-32 lg:px-10">
       <div class="mx-auto max-w-3xl text-center">
         <div class="reveal">
-          <p class="mb-5 text-xs font-semibold uppercase tracking-[.23em] text-sage">Entre em contato</p>
-          <h2 class="font-display text-4xl font-medium leading-tight tracking-[-.025em] sm:text-5xl lg:text-6xl">Seu
-            cuidado pode<br><span class="italic text-coral">começar aqui.</span></h2>
+          <p class="mb-3 text-xs font-semibold uppercase tracking-[.23em] text-sage">Atendimento & Triagem</p>
+          <h2 class="font-display text-3xl font-medium leading-tight tracking-[-.025em] sm:text-4xl lg:text-5xl">
+            Formulário Pré-Consulta<br>
+            <span class="italic text-coral font-light text-2xl sm:text-3xl">Dra. Beatriz Franke Cully | Médica | CRMSP 240387</span>
+          </h2>
+          <p class="mt-4 text-sm font-light leading-relaxed text-cream/75 max-w-xl mx-auto">
+            Seja bem-vindo(a)! Este formulário tem como objetivo conhecer um pouco da sua história antes da consulta, tornando nosso atendimento mais organizado e proveitoso. Todas as informações serão tratadas com absoluto sigilo médico.
+          </p>
         </div>
 
         <form id="contact-form"
-          class="reveal mt-12 rounded-3xl bg-cream p-7 text-left text-ink shadow-soft sm:p-10 lg:p-12">
-          <div class="mb-10">
-            <h3 class="font-display text-3xl">Solicite seu atendimento</h3>
-            <p class="mt-3 text-sm font-light leading-6 text-ink/60">Preencha os campos abaixo. Entraremos em contato
-              para combinar os próximos passos.</p>
+          class="reveal mt-10 rounded-3xl bg-cream p-6 text-left text-ink shadow-soft sm:p-10 lg:p-12 space-y-8">
+          
+          <!-- Seção 1: Identificação -->
+          <div class="border-b border-ink/10 pb-8">
+            <h3 class="font-display text-xl font-medium text-ink mb-5 flex items-center gap-2.5">
+              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-sage/30 text-xs font-semibold text-ink">1</span>
+              Identificação
+            </h3>
+            <div class="grid gap-6 sm:grid-cols-3">
+              <label class="block text-xs font-semibold uppercase tracking-[.13em] sm:col-span-2">
+                Nome completo *
+                <input required name="nome" autocomplete="name" type="text" placeholder="Seu nome completo"
+                  class="mt-2.5 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-2.5 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0">
+              </label>
+              <label class="block text-xs font-semibold uppercase tracking-[.13em]">
+                Idade *
+                <input required name="idade" type="number" min="1" max="120" placeholder="Ex: 30"
+                  class="mt-2.5 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-2.5 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0">
+              </label>
+              <label class="block text-xs font-semibold uppercase tracking-[.13em] sm:col-span-3">
+                Telefone / WhatsApp *
+                <input required name="telefone" autocomplete="tel" type="tel" placeholder="(11) 99999-9999"
+                  class="mt-2.5 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-2.5 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0">
+              </label>
+            </div>
           </div>
 
-          <div class="grid gap-7 sm:grid-cols-2">
-            <label class="block text-xs font-semibold uppercase tracking-[.13em]">
-              Nome
-              <input required name="nome" autocomplete="name" type="text" placeholder="Como podemos chamar você?"
-                class="mt-3 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0">
-            </label>
-            <label class="block text-xs font-semibold uppercase tracking-[.13em]">
-              E-mail
-              <input required name="email" autocomplete="email" type="email" placeholder="seu@email.com"
-                class="mt-3 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0">
-            </label>
-            <label class="block text-xs font-semibold uppercase tracking-[.13em] sm:col-span-2">
-              Motivo da consulta
-              <select required name="motivo"
-                class="mt-3 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none transition focus:border-blue focus:ring-0">
-                <option value="">Selecione uma opção</option>
-                <option>Transtornos ansiosos</option>
-                <option>Estresse</option>
-                <option>TDAH</option>
-                <option>TDM — Transtorno depressivo maior</option>
-                <option>TOC</option>
-                <option>TAB</option>
-                <option>Outro motivo</option>
-              </select>
-            </label>
-            <label class="block text-xs font-semibold uppercase tracking-[.13em] sm:col-span-2">
-              Mensagem
-              <textarea required name="mensagem" rows="4" placeholder="Conte brevemente como podemos ajudar."
-                class="mt-3 w-full resize-none border-0 border-b border-ink/20 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue focus:ring-0"></textarea>
+          <!-- Seção 2: Histórico em Saúde Mental -->
+          <div class="border-b border-ink/10 pb-8 space-y-6">
+            <h3 class="font-display text-xl font-medium text-ink mb-5 flex items-center gap-2.5">
+              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-sage/30 text-xs font-semibold text-ink">2</span>
+              Histórico em Saúde Mental
+            </h3>
+
+            <!-- 1. Psiquiatra prévio -->
+            <div class="rounded-2xl bg-ink/[0.02] p-4 sm:p-5 border border-ink/5">
+              <p class="text-xs font-semibold uppercase tracking-[.12em] text-ink/80 mb-3">
+                1. Você já realizou acompanhamento com psiquiatra? *
+              </p>
+              <div class="flex items-center gap-6">
+                <label class="inline-flex items-center gap-2 text-sm text-ink cursor-pointer font-medium">
+                  <input type="radio" name="psiquiatra_previo" value="Sim" required class="h-4 w-4 accent-coral" onchange="toggleConditionalField('psiquiatra_tempo_wrap', true)">
+                  <span>Sim</span>
+                </label>
+                <label class="inline-flex items-center gap-2 text-sm text-ink cursor-pointer font-medium">
+                  <input type="radio" name="psiquiatra_previo" value="Não" class="h-4 w-4 accent-coral" onchange="toggleConditionalField('psiquiatra_tempo_wrap', false)">
+                  <span>Não</span>
+                </label>
+              </div>
+              <div id="psiquiatra_tempo_wrap" class="mt-4 hidden border-t border-ink/10 pt-3">
+                <label class="block text-xs font-medium text-ink/75">
+                  Se sim, por quanto tempo?
+                  <input name="psiquiatra_tempo" type="text" placeholder="Ex: 6 meses, 2 anos..."
+                    class="mt-1.5 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-2 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue">
+                </label>
+              </div>
+            </div>
+
+            <!-- 2. Diagnóstico prévio -->
+            <div class="rounded-2xl bg-ink/[0.02] p-4 sm:p-5 border border-ink/5">
+              <label class="block text-xs font-semibold uppercase tracking-[.12em] text-ink/80">
+                2. Você possui algum diagnóstico psiquiátrico prévio?
+                <textarea name="diagnostico_previo" rows="2" placeholder="Descreva se possuir (ex: Ansiedade, Depressão, TDAH...) ou deixe em branco se não houver"
+                  class="mt-2.5 w-full resize-none border-0 border-b border-ink/20 bg-transparent px-0 py-2 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue"></textarea>
+              </label>
+            </div>
+
+            <!-- 3. Medicação anterior -->
+            <div class="rounded-2xl bg-ink/[0.02] p-4 sm:p-5 border border-ink/5">
+              <p class="text-xs font-semibold uppercase tracking-[.12em] text-ink/80 mb-3">
+                3. Você já utilizou alguma medicação psiquiátrica? *
+              </p>
+              <div class="flex items-center gap-6">
+                <label class="inline-flex items-center gap-2 text-sm text-ink cursor-pointer font-medium">
+                  <input type="radio" name="medicacao_anterior" value="Sim" required class="h-4 w-4 accent-coral" onchange="toggleConditionalField('medicacao_anterior_wrap', true)">
+                  <span>Sim</span>
+                </label>
+                <label class="inline-flex items-center gap-2 text-sm text-ink cursor-pointer font-medium">
+                  <input type="radio" name="medicacao_anterior" value="Não" class="h-4 w-4 accent-coral" onchange="toggleConditionalField('medicacao_anterior_wrap', false)">
+                  <span>Não</span>
+                </label>
+              </div>
+              <div id="medicacao_anterior_wrap" class="mt-4 hidden border-t border-ink/10 pt-3">
+                <label class="block text-xs font-medium text-ink/75">
+                  Se sim, informe quais medicamentos, por quanto tempo e, se lembrar, por qual motivo foram prescritos.
+                  <textarea name="medicacao_anterior_detalhes" rows="2" placeholder="Informe os medicamentos e detalhes..."
+                    class="mt-1.5 w-full resize-none border-0 border-b border-ink/20 bg-transparent px-0 py-2 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue"></textarea>
+                </label>
+              </div>
+            </div>
+
+            <!-- 4. Medicação atual -->
+            <div class="rounded-2xl bg-ink/[0.02] p-4 sm:p-5 border border-ink/5">
+              <p class="text-xs font-semibold uppercase tracking-[.12em] text-ink/80 mb-3">
+                4. Atualmente utiliza alguma medicação psiquiátrica? *
+              </p>
+              <div class="flex items-center gap-6">
+                <label class="inline-flex items-center gap-2 text-sm text-ink cursor-pointer font-medium">
+                  <input type="radio" name="medicacao_atual" value="Sim" required class="h-4 w-4 accent-coral" onchange="toggleConditionalField('medicacao_atual_wrap', true)">
+                  <span>Sim</span>
+                </label>
+                <label class="inline-flex items-center gap-2 text-sm text-ink cursor-pointer font-medium">
+                  <input type="radio" name="medicacao_atual" value="Não" class="h-4 w-4 accent-coral" onchange="toggleConditionalField('medicacao_atual_wrap', false)">
+                  <span>Não</span>
+                </label>
+              </div>
+              <div id="medicacao_atual_wrap" class="mt-4 hidden border-t border-ink/10 pt-3">
+                <label class="block text-xs font-medium text-ink/75">
+                  Se sim, informe o nome do medicamento e a dose.
+                  <input name="medicacao_atual_detalhes" type="text" placeholder="Ex: Sertralina 50mg, Escitalopram 10mg..."
+                    class="mt-1.5 w-full border-0 border-b border-ink/20 bg-transparent px-0 py-2 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue">
+                </label>
+              </div>
+            </div>
+
+            <!-- 5. Psicoterapia -->
+            <div class="rounded-2xl bg-ink/[0.02] p-4 sm:p-5 border border-ink/5">
+              <p class="text-xs font-semibold uppercase tracking-[.12em] text-ink/80 mb-3">
+                5. Você já realizou ou realiza psicoterapia? *
+              </p>
+              <div class="grid gap-2.5 sm:grid-cols-3">
+                <label class="inline-flex items-center gap-2.5 text-sm text-ink cursor-pointer p-3 rounded-xl border border-ink/10 hover:bg-sage/15 transition">
+                  <input type="radio" name="psicoterapia" value="Nunca fiz" required class="h-4 w-4 accent-coral">
+                  <span>Nunca fiz</span>
+                </label>
+                <label class="inline-flex items-center gap-2.5 text-sm text-ink cursor-pointer p-3 rounded-xl border border-ink/10 hover:bg-sage/15 transition">
+                  <input type="radio" name="psicoterapia" value="Já fiz anteriormente" class="h-4 w-4 accent-coral">
+                  <span>Já fiz anteriormente</span>
+                </label>
+                <label class="inline-flex items-center gap-2.5 text-sm text-ink cursor-pointer p-3 rounded-xl border border-ink/10 hover:bg-sage/15 transition">
+                  <input type="radio" name="psicoterapia" value="Faço atualmente" class="h-4 w-4 accent-coral">
+                  <span>Faço atualmente</span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Seção 3: Queixa Atual -->
+          <div class="border-b border-ink/10 pb-8 space-y-6">
+            <h3 class="font-display text-xl font-medium text-ink mb-5 flex items-center gap-2.5">
+              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-sage/30 text-xs font-semibold text-ink">3</span>
+              Queixa Atual
+            </h3>
+
+            <!-- 6. Motivo -->
+            <div class="rounded-2xl bg-ink/[0.02] p-4 sm:p-5 border border-ink/5">
+              <label class="block text-xs font-semibold uppercase tracking-[.12em] text-ink/80">
+                6. O que motivou você a procurar atendimento neste momento? *
+                <textarea required name="motivo_atendimento" rows="3" placeholder="Descreva brevemente seus principais sintomas, sentimentos ou o que o(a) motivou a agendar..."
+                  class="mt-2.5 w-full resize-none border-0 border-b border-ink/20 bg-transparent px-0 py-2 text-sm font-normal normal-case tracking-normal outline-none transition placeholder:text-ink/35 focus:border-blue"></textarea>
+              </label>
+            </div>
+
+            <!-- Sofrimento emocional -->
+            <div class="rounded-2xl bg-ink/[0.02] p-4 sm:p-5 border border-ink/5">
+              <p class="text-xs font-semibold uppercase tracking-[.12em] text-ink/80 mb-3">
+                Como você avalia seu sofrimento emocional neste momento? *
+              </p>
+              <div class="grid gap-2 grid-cols-2 sm:grid-cols-5">
+                <label class="flex flex-col items-center justify-center text-center p-3 rounded-xl border border-ink/10 cursor-pointer hover:border-coral hover:bg-coral/10 transition">
+                  <input type="radio" name="sofrimento" value="Muito leve" required class="h-4 w-4 accent-coral mb-1.5">
+                  <span class="text-xs font-medium text-ink">Muito leve</span>
+                </label>
+                <label class="flex flex-col items-center justify-center text-center p-3 rounded-xl border border-ink/10 cursor-pointer hover:border-coral hover:bg-coral/10 transition">
+                  <input type="radio" name="sofrimento" value="Leve" class="h-4 w-4 accent-coral mb-1.5">
+                  <span class="text-xs font-medium text-ink">Leve</span>
+                </label>
+                <label class="flex flex-col items-center justify-center text-center p-3 rounded-xl border border-ink/10 cursor-pointer hover:border-coral hover:bg-coral/10 transition">
+                  <input type="radio" name="sofrimento" value="Moderado" class="h-4 w-4 accent-coral mb-1.5">
+                  <span class="text-xs font-medium text-ink">Moderado</span>
+                </label>
+                <label class="flex flex-col items-center justify-center text-center p-3 rounded-xl border border-ink/10 cursor-pointer hover:border-coral hover:bg-coral/10 transition">
+                  <input type="radio" name="sofrimento" value="Intenso" class="h-4 w-4 accent-coral mb-1.5">
+                  <span class="text-xs font-medium text-ink">Intenso</span>
+                </label>
+                <label class="flex flex-col items-center justify-center text-center p-3 rounded-xl border border-ink/10 cursor-pointer hover:border-coral hover:bg-coral/10 transition col-span-2 sm:col-span-1">
+                  <input type="radio" name="sofrimento" value="Muito intenso" class="h-4 w-4 accent-coral mb-1.5">
+                  <span class="text-xs font-medium text-ink">Muito intenso</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seção 4: Consentimento -->
+          <div class="space-y-4 pt-2">
+            <h3 class="font-display text-xl font-medium text-ink mb-3 flex items-center gap-2.5">
+              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-sage/30 text-xs font-semibold text-ink">4</span>
+              Consentimento
+            </h3>
+            <div class="text-xs leading-relaxed text-ink/80 bg-sage/20 p-4 sm:p-5 rounded-2xl border border-sage/40">
+              Declaro que as informações fornecidas são verdadeiras e compreendo que este formulário tem finalidade exclusivamente assistencial, sendo protegido pelo sigilo médico, conforme as normas éticas vigentes.
+            </div>
+            <label class="inline-flex items-center gap-3 cursor-pointer mt-2">
+              <input required type="checkbox" name="consentimento" class="h-5 w-5 rounded accent-coral border-ink/30 focus:ring-0 cursor-pointer">
+              <span class="text-xs font-bold uppercase tracking-[.12em] text-ink">Li e concordo. *</span>
             </label>
           </div>
 
-          <div class="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <p class="max-w-xs text-[11px] leading-5 text-ink/45">Ao enviar, você concorda com o uso destes dados
-              exclusivamente para retorno do contato.</p>
+          <!-- Botão Enviar -->
+          <div class="mt-8 flex flex-col items-center gap-4">
             <button type="submit"
-              class="focus-ring group inline-flex items-center justify-center gap-3 rounded-full bg-coral px-7 py-4 text-sm font-semibold text-ink transition hover:bg-[#ffa894]">
-              Enviar mensagem
+              class="focus-ring group inline-flex w-full items-center justify-center gap-3 rounded-full bg-coral px-8 py-4 text-base font-semibold text-ink transition hover:bg-[#ffa894] shadow-md sm:w-auto">
+              Enviar Formulário via WhatsApp
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"
-                class="h-4 w-4 transition-transform group-hover:translate-x-1" stroke="currentColor" stroke-width="1.8">
+                class="h-5 w-5 transition-transform group-hover:translate-x-1" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5" />
               </svg>
             </button>
+            <p id="form-status" role="status" class="hidden w-full rounded-2xl bg-sage/35 p-4 text-sm font-medium text-ink text-center"></p>
           </div>
-          <p id="form-status" role="status" class="mt-5 hidden rounded-xl bg-sage/35 p-4 text-sm">Mensagem preparada.
-            Configure o e-mail ou serviço de formulário para concluir o envio.</p>
+
         </form>
 
         <div class="reveal mt-12 flex flex-col items-center gap-6 text-center">
@@ -1524,28 +1688,71 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -7% 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    function toggleConditionalField(wrapperId, show) {
+      const el = document.getElementById(wrapperId);
+      if (el) {
+        if (show) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      }
+    }
+
     document.getElementById('contact-form').addEventListener('submit', (event) => {
       event.preventDefault();
       const form = event.target;
+
+      const getRadioVal = (name) => {
+        const el = form.querySelector(`input[name="${name}"]:checked`);
+        return el ? el.value : 'Não informado';
+      };
+
       const nome = form.elements['nome'] ? form.elements['nome'].value.trim() : '';
-      const email = form.elements['email'] ? form.elements['email'].value.trim() : '';
-      const motivo = form.elements['motivo'] ? form.elements['motivo'].value.trim() : '';
-      const mensagem = form.elements['mensagem'] ? form.elements['mensagem'].value.trim() : '';
+      const idade = form.elements['idade'] ? form.elements['idade'].value.trim() : '';
+      const telefone = form.elements['telefone'] ? form.elements['telefone'].value.trim() : '';
+
+      const psiquiatraPrevio = getRadioVal('psiquiatra_previo');
+      const psiquiatraTempo = form.elements['psiquiatra_tempo'] ? form.elements['psiquiatra_tempo'].value.trim() : '';
+      const diagnosticoPrevio = form.elements['diagnostico_previo'] ? form.elements['diagnostico_previo'].value.trim() : '';
+
+      const medicacaoAnterior = getRadioVal('medicacao_anterior');
+      const medicacaoAnteriorDet = form.elements['medicacao_anterior_detalhes'] ? form.elements['medicacao_anterior_detalhes'].value.trim() : '';
+
+      const medicacaoAtual = getRadioVal('medicacao_atual');
+      const medicacaoAtualDet = form.elements['medicacao_atual_detalhes'] ? form.elements['medicacao_atual_detalhes'].value.trim() : '';
+
+      const psicoterapia = getRadioVal('psicoterapia');
+
+      const motivoAtendimento = form.elements['motivo_atendimento'] ? form.elements['motivo_atendimento'].value.trim() : '';
+      const sofrimento = getRadioVal('sofrimento');
 
       const phone = '5511976702520';
-      const formattedText = `👩‍⚕️ *SOLICITAÇÃO DE ATENDIMENTO — DRA. BEATRIZ CULLY*\n\n` +
-                            `👤 *Nome:* ${nome}\n` +
-                            `📧 *E-mail:* ${email}\n` +
-                            `📋 *Motivo da Consulta:* ${motivo}\n\n` +
-                            `💬 *Mensagem:*\n"${mensagem}"\n\n` +
+      const formattedText = `📋 *FORMULÁRIO PRÉ-CONSULTA*\n` +
+                            `*Dra. Beatriz Franke Cully | CRMSP 240387*\n\n` +
+                            `👤 *1. IDENTIFICAÇÃO*\n` +
+                            `• *Nome:* ${nome}\n` +
+                            `• *Idade:* ${idade}\n` +
+                            `• *Telefone:* ${telefone}\n\n` +
+                            `🧠 *2. HISTÓRICO EM SAÚDE MENTAL*\n` +
+                            `1. *Acompanhamento com psiquiatra:* ${psiquiatraPrevio}` + (psiquiatraPrevio === 'Sim' && psiquiatraTempo ? ` (Tempo: ${psiquiatraTempo})` : '') + `\n` +
+                            `2. *Diagnóstico prévio:* ${diagnosticoPrevio || 'Não informado / Nenhum'}\n` +
+                            `3. *Medicação psiquiátrica anterior:* ${medicacaoAnterior}` + (medicacaoAnterior === 'Sim' && medicacaoAnteriorDet ? ` (${medicacaoAnteriorDet})` : '') + `\n` +
+                            `4. *Medicação psiquiátrica atual:* ${medicacaoAtual}` + (medicacaoAtual === 'Sim' && medicacaoAtualDet ? ` (${medicacaoAtualDet})` : '') + `\n` +
+                            `5. *Psicoterapia:* ${psicoterapia}\n\n` +
+                            `💭 *3. QUEIXA ATUAL*\n` +
+                            `6. *Motivo da consulta:* ${motivoAtendimento}\n` +
+                            `• *Sofrimento emocional:* ${sofrimento}\n\n` +
+                            `✅ *4. CONSENTIMENTO*\n` +
+                            `Declaro que as informações são verdadeiras (Li e concordo).\n\n` +
                             `---\n_Enviado através do site oficial_`;
 
       const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(formattedText)}`;
 
       const statusEl = document.getElementById('form-status');
       if (statusEl) {
-        statusEl.textContent = '✅ Formulário formatado! Redirecionando para o WhatsApp...';
-        statusEl.className = 'mt-5 block rounded-xl bg-[#9BCEC1]/40 p-4 text-sm text-[#1E2B37] font-medium';
+        statusEl.textContent = '✅ Formulário preenchido com sucesso! Redirecionando para o WhatsApp...';
+        statusEl.className = 'mt-5 block rounded-2xl bg-sage/40 p-4 text-sm text-ink font-medium text-center';
       }
 
       window.open(whatsappUrl, '_blank');
