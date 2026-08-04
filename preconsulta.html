@@ -790,7 +790,7 @@
       msg += `_Enviado via formulário pré-consulta do site oficial_`;
 
       const phone = '5511926160310';
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+      const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');
 
       const btn = document.getElementById('submit-btn');

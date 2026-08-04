@@ -1532,7 +1532,7 @@
                             `💬 *Mensagem:*\n"${mensagem}"\n\n` +
                             `---\n_Enviado através do site oficial_`;
 
-      const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(formattedText)}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(formattedText)}`;
 
       const statusEl = document.getElementById('form-status');
       if (statusEl) {
