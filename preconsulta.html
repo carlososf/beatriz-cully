@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulário Pré-Consulta da Dra. Beatriz Cully | Médica | CRMSP 240387. Preencha antes da sua primeira consulta.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Formulário Pré-Consulta | Dra. Beatriz Cully</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1E2B37;
+      --cream: #FFFFFF;
+      --coral: #FFB6A6;
+      --sage: #9BCEC1;
+      --blue: #67A2C5;
+      --blue-dark: #1F425B;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f9fa;
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .page-header {
+      background: var(--ink);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .page-header a {
+      position: absolute;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .page-header a:hover { color: #fff; }
+
+    .page-header img {
+      height: 48px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+
+    .form-hero {
+      background: linear-gradient(135deg, var(--ink) 0%, #2B4B62 100%);
+      color: white;
+      text-align: center;
+      padding: 3.5rem 2rem 3rem;
+    }
+
+    .form-hero .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--sage);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-hero h1 span { color: var(--coral); font-style: italic; }
+
+    .form-hero p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .form-hero .crm {
+      margin-top: 1.25rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    .form-container {
+      max-width: 760px;
+      margin: -1.5rem auto 3rem;
+      padding: 0 1.25rem;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(30,43,55,0.1);
+      overflow: hidden;
+    }
+
+    .form-section {
+      padding: 2rem 2.5rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .form-section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .field-group { display: grid; gap: 1.25rem; }
+    .field-group.cols-2 { grid-template-columns: 1fr 1fr; }
+
+    .field { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .field label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(30,43,55,0.65);
+    }
+
+    .field input[type="text"],
+    .field input[type="tel"],
+    .field input[type="number"],
+    .field textarea {
+      border: none;
+      border-bottom: 1.5px solid rgba(30,43,55,0.15);
+      background: transparent;
+      padding: 0.6rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .field input:focus, .field textarea:focus { border-bottom-color: var(--blue); }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(30,43,55,0.3); }
+    .field textarea { resize: vertical; min-height: 80px; }
+
+    .question-block { margin-bottom: 1.75rem; }
+    .question-block:last-child { margin-bottom: 0; }
+
+    .question-text {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .question-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      background: var(--blue);
+      color: white;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .options-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+    .option-chip { position: relative; }
+
+    .option-chip input[type="radio"],
+    .option-chip input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .option-chip label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      border: 1.5px solid rgba(30,43,55,0.15);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: rgba(30,43,55,0.65);
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .option-chip input:checked + label {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: white;
+      font-weight: 500;
+    }
+
+    .option-chip label:hover { border-color: var(--blue); color: var(--blue-dark); }
+
+    .conditional-field {
+      margin-top: 0.9rem;
+      padding: 1rem 1.25rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      border-left: 3px solid var(--blue);
+    }
+
+    .conditional-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--blue-dark);
+      display: block;
+      margin-bottom: 0.5rem;
+      opacity: 1;
+    }
+
+    .conditional-field input[type="text"],
+    .conditional-field textarea {
+      border: none;
+      border-bottom: 1px solid rgba(30,43,55,0.15);
+      background: transparent;
+      padding: 0.5rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--ink);
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+
+    .conditional-field textarea { resize: vertical; min-height: 70px; }
+    .conditional-field input:focus, .conditional-field textarea:focus { border-bottom-color: var(--blue); }
+    .conditional-field input::placeholder, .conditional-field textarea::placeholder { color: rgba(30,43,55,0.35); }
+
+    .intensity-scale { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+    .intensity-option { position: relative; }
+
+    .intensity-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .intensity-option label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.65rem 0.75rem;
+      border: 1.5px solid rgba(30,43,55,0.15);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .intensity-option label .emoji { font-size: 1.4rem; }
+
+    .intensity-option label .text {
+      font-size: 0.72rem;
+      color: rgba(30,43,55,0.6);
+      font-weight: 400;
+    }
+
+    .intensity-option input:checked + label {
+      border-color: var(--blue);
+      background: rgba(103,162,197,0.08);
+    }
+
+    .intensity-option input:checked + label .text {
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
+
+    .consent-block {
+      background: #fef9f8;
+      border: 1.5px solid rgba(255,182,166,0.4);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .consent-block p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: rgba(30,43,55,0.7);
+    }
+
+    .consent-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .consent-check input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: var(--ink);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .consent-check label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      line-height: 1.5;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 1;
+    }
+
+    .submit-area {
+      padding: 2rem 2.5rem;
+      background: #f8f9fa;
+      text-align: center;
+    }
+
+    .submit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+    }
+
+    .submit-btn:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(37,211,102,0.45);
+    }
+
+    .submit-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+    .submit-note {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: rgba(30,43,55,0.45);
+      line-height: 1.5;
+    }
+
+    .page-footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+    }
+
+    .page-footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(30,43,55,0.08), transparent);
+    }
+
+    @media (max-width: 600px) {
+      .form-section { padding: 1.5rem 1.25rem; }
+      .field-group.cols-2 { grid-template-columns: 1fr; }
+      .intensity-option label { min-width: 60px; padding: 0.5rem; }
+      .intensity-option label .emoji { font-size: 1.2rem; }
+      .page-header a { display: none; }
+      .submit-area { padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <a href="index.html" aria-label="Voltar ao site">
+      <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7-7-7 7 7 7"/>
+      </svg>
+      Voltar ao site
+    </a>
+    <img src="logo-beatriz-cully-transparent.png" alt="Dra. Beatriz Cully">
+  </header>
+
+  <div class="form-hero">
+    <div class="badge">Formulário Pré-Consulta</div>
+    <h1>Seu cuidado começa <span>aqui.</span></h1>
+    <p>Este formulário tem como objetivo conhecer um pouco da sua história antes da consulta, tornando nosso atendimento mais organizado e proveitoso.</p>
+    <p class="crm">Dra. Beatriz Franke Cully · Médica · CRM-SP 240387 · Todas as informações são protegidas pelo sigilo médico.</p>
+  </div>
+
+  <div class="form-container">
+    <div class="form-card">
+      <form id="pre-consulta-form" novalidate>
+
+        <!-- Seção 1: Identificação -->
+        <div class="form-section">
+          <div class="section-label">
+            <div class="section-number">1</div>
+            <h2 class="section-title">Identificação</h2>
+          </div>
+          <div class="field-group">
+            <div class="field">
+              <label for="nome">Nome completo *</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+          </div>
+          <div class="field-group cols-2" style="margin-top:1.25rem">
+            <div class="field">
+              <label for="idade">Idade *</label>
+              <input type="number" id="idade" name="idade" placeholder="Ex: 30" min="18" max="120" required>
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone / WhatsApp *</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 9 0000-0000" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Seção 2: Histórico -->
+        <div class="form-section">
+          <div class="section-label">
+            <div class="section-number">2</div>
+            <h2 class="section-title">Histórico em Saúde Mental</h2>
+          </div>
+
+          <div class="question-block">
+            <p class="question-text">
+              <span class="question-number">1</span>
+              Você já realizou acompanhamento com psiquiatra?
+            </p>
+            <div class="options-grid">
+              <div class="option-chip">
+                <input type="radio" id="psi-sim" name="ja_psiquiatra" value="Sim">
+                <label for="psi-sim">✅ Sim</label>
+              </div>
+              <div class="option-chip">
+                <input type="radio" id="psi-nao" name="ja_psiquiatra" value="Não">
+                <label for="psi-nao">❌ Não</label>
+              </div>
+            </div>
+            <div class="conditional-field" id="campo-tempo-psi" style="display:none">
+              <label for="tempo_psi">Por quanto tempo?</label>
+              <input type="text" id="tempo_psi" name="tempo_psi" placeholder="Ex: 6 meses, 2 anos...">
+            </div>
+          </div>
+
+          <div class="question-block">
+            <p class="question-text">
+              <span class="question-number">2</span>
+              Você possui algum diagnóstico psiquiátrico prévio?
+            </p>
+            <div class="field">
+              <input type="text" id="diagnostico" name="diagnostico" placeholder="Se sim, qual(is)? Se não, deixe em branco.">
+            </div>
+          </div>
+
+          <div class="question-block">
+            <p class="question-text">
+              <span class="question-number">3</span>
+              Você já utilizou alguma medicação psiquiátrica anteriormente?
+            </p>
+            <div class="options-grid">
+              <div class="option-chip">
+                <input type="radio" id="med-ant-sim" name="medicacao_anterior" value="Sim">
+                <label for="med-ant-sim">✅ Sim</label>
+              </div>
+              <div class="option-chip">
+                <input type="radio" id="med-ant-nao" name="medicacao_anterior" value="Não">
+                <label for="med-ant-nao">❌ Não</label>
+              </div>
+            </div>
+            <div class="conditional-field" id="campo-med-anterior" style="display:none">
+              <label for="medicacao_anterior_detalhes">Quais medicamentos, por quanto tempo e por qual motivo?</label>
+              <textarea id="medicacao_anterior_detalhes" name="medicacao_anterior_detalhes" placeholder="Ex: Fluoxetina 20mg por 1 ano — ansiedade generalizada..."></textarea>
+            </div>
+          </div>
+
+          <div class="question-block">
+            <p class="question-text">
+              <span class="question-number">4</span>
+              Atualmente utiliza alguma medicação psiquiátrica?
+            </p>
+            <div class="options-grid">
+              <div class="option-chip">
+                <input type="radio" id="med-atual-sim" name="medicacao_atual" value="Sim">
+                <label for="med-atual-sim">✅ Sim</label>
+              </div>
+              <div class="option-chip">
+                <input type="radio" id="med-atual-nao" name="medicacao_atual" value="Não">
+                <label for="med-atual-nao">❌ Não</label>
+              </div>
+            </div>
+            <div class="conditional-field" id="campo-med-atual" style="display:none">
+              <label for="medicacao_atual_detalhes">Nome do medicamento e dose atual:</label>
+              <input type="text" id="medicacao_atual_detalhes" name="medicacao_atual_detalhes" placeholder="Ex: Escitalopram 10mg">
+            </div>
+          </div>
+
+          <div class="question-block">
+            <p class="question-text">
+              <span class="question-number">5</span>
+              Você já realizou ou realiza psicoterapia?
+            </p>
+            <div class="options-grid">
+              <div class="option-chip">
+                <input type="radio" id="psi-nunca" name="psicoterapia" value="Nunca fiz">
+                <label for="psi-nunca">🚫 Nunca fiz</label>
+              </div>
+              <div class="option-chip">
+                <input type="radio" id="psi-anterior" name="psicoterapia" value="Já fiz anteriormente">
+                <label for="psi-anterior">🕐 Já fiz anteriormente</label>
+              </div>
+              <div class="option-chip">
+                <input type="radio" id="psi-atual" name="psicoterapia" value="Faço atualmente">
+                <label for="psi-atual">✅ Faço atualmente</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Seção 3: Queixa Atual -->
+        <div class="form-section">
+          <div class="section-label">
+            <div class="section-number">3</div>
+            <h2 class="section-title">Queixa Atual</h2>
+          </div>
+
+          <div class="question-block">
+            <p class="question-text">
+              <span class="question-number">6</span>
+              O que motivou você a procurar atendimento neste momento?
+            </p>
+            <div class="field">
+              <textarea name="motivo_atendimento" id="motivo_atendimento" rows="4" placeholder="Descreva brevemente o que está sentindo e o que motivou você a buscar ajuda agora..."></textarea>
+            </div>
+          </div>
+
+          <div class="question-block">
+            <p class="question-text" style="display:block; margin-bottom: 1rem;">
+              Como você avalia seu sofrimento emocional neste momento?
+            </p>
+            <div class="intensity-scale">
+              <div class="intensity-option">
+                <input type="radio" id="sofrimento-1" name="sofrimento" value="Muito leve">
+                <label for="sofrimento-1">
+                  <span class="emoji">😊</span>
+                  <span class="text">Muito leve</span>
+                </label>
+              </div>
+              <div class="intensity-option">
+                <input type="radio" id="sofrimento-2" name="sofrimento" value="Leve">
+                <label for="sofrimento-2">
+                  <span class="emoji">🙂</span>
+                  <span class="text">Leve</span>
+                </label>
+              </div>
+              <div class="intensity-option">
+                <input type="radio" id="sofrimento-3" name="sofrimento" value="Moderado">
+                <label for="sofrimento-3">
+                  <span class="emoji">😐</span>
+                  <span class="text">Moderado</span>
+                </label>
+              </div>
+              <div class="intensity-option">
+                <input type="radio" id="sofrimento-4" name="sofrimento" value="Intenso">
+                <label for="sofrimento-4">
+                  <span class="emoji">😟</span>
+                  <span class="text">Intenso</span>
+                </label>
+              </div>
+              <div class="intensity-option">
+                <input type="radio" id="sofrimento-5" name="sofrimento" value="Muito intenso">
+                <label for="sofrimento-5">
+                  <span class="emoji">😰</span>
+                  <span class="text">Muito intenso</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Seção 4: Consentimento -->
+        <div class="form-section">
+          <div class="section-label">
+            <div class="section-number">4</div>
+            <h2 class="section-title">Consentimento</h2>
+          </div>
+
+          <div class="consent-block">
+            <p>
+              Declaro que as informações fornecidas são verdadeiras e compreendo que este formulário tem finalidade exclusivamente assistencial, sendo protegido pelo <strong>sigilo médico</strong>, conforme as normas éticas vigentes. Os dados serão utilizados exclusivamente para fins de atendimento clínico pela Dra. Beatriz Cully.
+            </p>
+            <div class="consent-check">
+              <input type="checkbox" id="consentimento" name="consentimento" required>
+              <label for="consentimento">Li e concordo com as condições acima. ✅</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            Enviar pelo WhatsApp
+          </button>
+          <p class="submit-note">
+            📱 Você será redirecionado(a) para o WhatsApp com as informações formatadas.<br>
+            Após a abertura, clique em <strong>Enviar</strong> para concluir.
+          </p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <p>© <span id="ano"></span> Dra. Beatriz Cully · CRM-SP 240387 · Atendimento exclusivamente online ·
+      <a href="index.html">Voltar ao site</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    function toggleField(radioName, fieldId, showValue) {
+      const radios = document.querySelectorAll(`input[name="${radioName}"]`);
+      const field = document.getElementById(fieldId);
+      radios.forEach(r => {
+        r.addEventListener('change', () => {
+          field.style.display = (r.value === showValue && r.checked) ? 'block' : 'none';
+        });
+      });
+    }
+
+    toggleField('ja_psiquiatra', 'campo-tempo-psi', 'Sim');
+    toggleField('medicacao_anterior', 'campo-med-anterior', 'Sim');
+    toggleField('medicacao_atual', 'campo-med-atual', 'Sim');
+
+    document.getElementById('pre-consulta-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const f = e.target;
+
+      const nome = f.nome.value.trim();
+      const idade = f.idade.value.trim();
+      const telefone = f.telefone.value.trim();
+      const consentimento = f.consentimento.checked;
+
+      if (!nome || !idade || !telefone) {
+        alert('Por favor, preencha os campos obrigatórios: nome, idade e telefone.');
+        return;
+      }
+      if (!consentimento) {
+        alert('Por favor, marque o consentimento antes de enviar.');
+        return;
+      }
+
+      const jaPsiquiatra = document.querySelector('input[name="ja_psiquiatra"]:checked')?.value || 'Não respondido';
+      const tempoPsi = f.tempo_psi?.value.trim() || '';
+      const diagnostico = f.diagnostico.value.trim() || 'Nenhum informado';
+      const medAnterior = document.querySelector('input[name="medicacao_anterior"]:checked')?.value || 'Não respondido';
+      const medAnteriorDet = f.medicacao_anterior_detalhes?.value.trim() || '';
+      const medAtual = document.querySelector('input[name="medicacao_atual"]:checked')?.value || 'Não respondido';
+      const medAtualDet = f.medicacao_atual_detalhes?.value.trim() || '';
+      const psicoterapia = document.querySelector('input[name="psicoterapia"]:checked')?.value || 'Não respondido';
+      const motivoAtendimento = f.motivo_atendimento.value.trim() || 'Não informado';
+      const sofrimento = document.querySelector('input[name="sofrimento"]:checked')?.value || 'Não respondido';
+
+      let msg = '';
+      msg += `🏥 *FORMULÁRIO PRÉ-CONSULTA*\n`;
+      msg += `*Dra. Beatriz Franke Cully | CRM-SP 240387*\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+
+      msg += `👤 *IDENTIFICAÇÃO*\n`;
+      msg += `📛 Nome: ${nome}\n`;
+      msg += `🎂 Idade: ${idade} anos\n`;
+      msg += `📱 Telefone: ${telefone}\n\n`;
+
+      msg += `🧠 *HISTÓRICO EM SAÚDE MENTAL*\n\n`;
+
+      msg += `1️⃣ Já foi acompanhado por psiquiatra?\n`;
+      msg += `➤ ${jaPsiquiatra}`;
+      if (jaPsiquiatra === 'Sim' && tempoPsi) msg += ` — Tempo: ${tempoPsi}`;
+      msg += `\n\n`;
+
+      msg += `2️⃣ Diagnóstico psiquiátrico prévio:\n`;
+      msg += `➤ ${diagnostico}\n\n`;
+
+      msg += `3️⃣ Já usou medicação psiquiátrica?\n`;
+      msg += `➤ ${medAnterior}`;
+      if (medAnterior === 'Sim' && medAnteriorDet) msg += `\n   📋 ${medAnteriorDet}`;
+      msg += `\n\n`;
+
+      msg += `4️⃣ Usa medicação psiquiátrica atualmente?\n`;
+      msg += `➤ ${medAtual}`;
+      if (medAtual === 'Sim' && medAtualDet) msg += `\n   💊 ${medAtualDet}`;
+      msg += `\n\n`;
+
+      msg += `5️⃣ Realiza psicoterapia?\n`;
+      msg += `➤ ${psicoterapia}\n\n`;
+
+      msg += `💬 *QUEIXA ATUAL*\n\n`;
+      msg += `6️⃣ Motivo do atendimento:\n`;
+      msg += `➤ ${motivoAtendimento}\n\n`;
+
+      msg += `📊 Nível de sofrimento emocional: *${sofrimento}*\n\n`;
+
+      msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `✅ *Consentimento:* Li e concordo com o sigilo médico.\n`;
+      msg += `_Enviado via formulário pré-consulta do site oficial_`;
+
+      const phone = '5511926160310';
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = '✅ Redirecionando para o WhatsApp...';
+      btn.style.background = '#1E2B37';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> Enviar pelo WhatsApp`;
+        btn.style.background = '#25D366';
+        btn.disabled = false;
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
